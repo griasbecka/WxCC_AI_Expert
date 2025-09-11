@@ -65,6 +65,24 @@
       color: #333;
       width: 90%;
     }
+	
+	.readonly-field-small {
+      background-color: #f2f2f2;
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+      color: #333;
+      width: 87%;
+    }
+	
+	.readonly-field-extrasmall {
+      background-color: #f2f2f2;
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+      color: #333;
+      width: 35%;
+    }
 
     .readonly-field_bold {
       background-color: #f2f2f2;
@@ -74,6 +92,16 @@
       color: #b00e2c;
       font-weight: bold;
       width: 90%;
+    }
+	
+	.readonly-field_bold-small {
+      background-color: #f2f2f2;
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+      color: #b00e2c;
+      font-weight: bold;
+      width: 87%;
     }
 
     .sub-section {
@@ -86,7 +114,7 @@
     }
 
     .contact-persons-table {
-      width: 90%;
+      width: 93%;
       border-collapse: collapse;
 	  margin-left: 40px;
     }
@@ -115,7 +143,7 @@
       font-size: 16px;
       border-radius: 4px;
       transition: background-color 0.3s ease;
-	  width: 150px;
+	  width: 200px;
     }
 
     button:hover {
@@ -189,10 +217,11 @@
     {
       try
       {
+		/*
           const response = await fetch(DBconURL, requestOptions);
           const jsonData = await response.json();
           console.log(jsonData);
-
+		*/
           document.getElementById("mylasttime").value = jsonData.mylasttime;
           document.getElementById("mylastagent").value = jsonData.sagentemail;
       }
@@ -216,65 +245,93 @@
       <div class="column">
         <form>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Firmenname</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Beispiel GmbH"></td></tr></table>
+            <table border=0 width="100%"><tr><td width=150><label for="company">Firma</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Beispiel GmbH"></td></tr></table>
           </div>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Adresse</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Musterstrasse 123"></td></tr></table>			
-          </div>
+            <table border=0 width="100%"><tr><td width=150><label for="company">Adresse</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Musterstrasse 123, 94051 Hauzenberg"></td></tr></table>			
+          </div>	
+		  <div class="form-group">
+            <table border=0 width="100%"><tr><td width=150><label for="company">Account-Manager</label></td><td><input type="text" id="mylasttime" name="mylasttime" class="readonly-field-extrasmall" value="Godfather of Salesplay">
+			&nbsp;<a href='webexteams://im?email=stefan.slominski@acp.de'>Webex chat</a>
+			&nbsp;<a href='webextel://+4985869604160'>Anruf</a>
+			</td></tr></table>
+          </div>		  
+			<hr>		  
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Kundennummer</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="12345"></td></tr></table>
-          </div>
-          <hr>
-          <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Letzter Anruf am</label></td><td><input type="text" id="mylasttime" name="mylasttime" class="readonly-field" value="28. Mai 2023, 10:30 Uhr"></td></tr></table>
-          </div>
+            <table border=0 width="100%"><tr><td width=300><label for="company">Anfrage zu bestehendem Ticket</label></td><td><input type="text" id="company" name="company" class="readonly-field-small" value="ja / nein"></td></tr></table>
+          </div> 
         </form>
       </div>
       <div class="column">
         <form>
           <div class="form-group">		  
-            <table border=0 width="100%"><tr><td width=150><label for="company">Telefonnummer</label></td><td><input type="text" id="sanrufer" name="sanrufer" class="readonly-field" value="+49123456789"></td></tr></table>
+            <table border=0 width="100%"><tr><td width=150><label for="company">Telefon Anrufer</label></td><td><input type="text" id="sanrufer" name="sanrufer" class="readonly-field" value="+49123456789"></td></tr></table>
           </div>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">E-Mail</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="info@beispielgmbh.com"></td></tr></table>
-          </div>
+            <table border=0 width="100%"><tr><td width=150><label for="company">Name Anrufer</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Max Mustermann"></td></tr></table>
+          </div>		  
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company"><font color=#b00e2c>Verifizierungs PIN</font></label></td><td><input type="text" id="company" name="company" class="readonly-field_bold" value="2649"></td></tr></table>
+            <table border=0 width="100%"><tr><td width=150><label for="company">Servicemanager</label></td><td><input type="text" id="mylastagent" name="mylastagent" class="readonly-field" value="Taking Care Guy"></td></tr></table>
           </div>
-          <hr>
+			<hr>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Gesprochen mit</label></td><td><input type="text" id="mylastagent" name="mylastagent" class="readonly-field" value="Agent Lukas"></td></tr></table>
+            <table border=0 width="100%"><tr><td width=300><label for="company"><font color=#b00e2c>Aktuell offene Tickets</font></label></td><td><input type="text" id="company" name="company" class="readonly-field_bold-small" value="4"></td></tr></table>
           </div>
         </form>
       </div>
       <div style="clear: both;"></div>
     </div>
     <div class="sub-section">
-      <h2>Ansprechpartner</h2>
+      <h2>Offene Tickets</h2>
       <table class="contact-persons-table">
         <thead>
           <tr>
-            <th width=240>Name</th>
-            <th width=240>Telefonnummer</th>
-            <th>Email</th>
+            <th width=150>TicketNr</th>
+			<th width=400>Topic</th>
+            <th width=240>Assignment Group</th>
+            <th>Assigned to</th>
+			<th>Eröffnet / Letzter Eintrag</th>
+			<th>Needs Attention</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Max Mustermann</td>
-            <td>+49 123 456789</td>
-            <td>max.mustermann@beispielgmbh.com</td>
+            <td><a href='https://acpprod.service-now.com/change_request.do?sys_id=1daae53283db5e50f5ae9cdfeeaad32c&sysparm_record_target=task&sysparm_record_row=5&sysparm_record_rows=8&sysparm_record_list=active%3Dtrue%5Eassigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe%5EstateNOT+IN3%2C4%2C7%2C8%2C5%2C6%5EORDERBYshort_description' target='_blank'>CHG0084341</a></td>
+            <td>User in Webex anlegen</td>
+            <td>HZB.Collaboration</td>
+			<td>Stefan Slominski</td>
+			<td>11.09.2025</td>
+			<td></td>
           </tr>
           <tr>
-            <td>Anna Musterfrau</td>
-            <td>+49 987 654321</td>
-            <td>anna.musterfrau@beispielgmbh.com</td>
+            <td><a href='' target='_blank'>CHG1234567</a></td>
+            <td>O365 Problem mit Resourcenpostfach</td>
+            <td>HZB.EnterpriseApplication</td>
+			<td>Stefan Maximilian</td>
+			<td>07.09.2025</td>
+			<td></td>
+          </tr>
+		  <tr>
+            <td><a href='' target='_blank'>INC1111222</a></td>
+            <td>Citrix - Golden Image verschwunden</td>
+            <td>HZB.Dispo</td>
+			<td></td>
+			<td>30.08.2025</td>
+			<td>&#9989; &#10071;</td>
+          </tr>
+		  <tr>
+            <td><a href='' target='_blank'>CHG9876543</a></td>
+            <td>Projekt Network as a Service</td>
+            <td>HZB.SecureInfrastructure Green</td>
+			<td>Jonas Pongratz</td>
+			<td>08.09.2025</td>
+			<td></td>
           </tr>
         </tbody>
       </table>
     </div>	
     <div class="sub-section">
-      <h2>Vertragspositionen</h2>
+      <h2>Deine Optionen</h2>
       <table class="contact-persons-table">
         <thead>
           <tr>
@@ -299,7 +356,10 @@
     </div>
 	<br>
     <div class="footer">
-      <button type="submit" disabled>Speichern</button> <button type="submit" disabled>Vertr&auml;ge</button> <button type="submit" disabled>Kontakte</button> <button type="submit" disabled>Ticketing</button>
+      <button type="submit" disabled>+ Incident</button> 
+	  <button type="submit" disabled>+ Presales Anfrage</button> 
+	  <button type="submit" disabled>Webex AM</button> 
+	  <button type="submit" disabled>Ticketing</button>
     </div>
   </div>
   <div id="content"></div>
