@@ -184,7 +184,7 @@
     // Liest mit .get() die Werte der Parameter aus
     const sAnrufer = urlParams.get('sAnrufer').replace("+", "%2B");
 	const existTicket = urlParams.get('existTicket');
-    
+	   
     //sAnrufer=sAnrufer.replace("+", "%2B");
 
     var DBconURL = 'https://webexdb.swsnet.de/rest/webexcc/a395418d-20c8-4b1b-b3a4-65081aeb359d?sAnrufer='+sAnrufer;
@@ -199,11 +199,13 @@
       headers: myHeaders,
       redirect: 'follow'
     };
-	document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
+	/*
+ 	document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
 	if (existTicket == true)
 		document.getElementById("existTicket").value = 'ja';
 	else
 		document.getElementById("existTicket").value = 'nein';
+	*/
     
     /*
     fetch(DBconURL, requestOptions)
@@ -243,8 +245,12 @@
 
       }
       document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
+	  if (existTicket == true)
+		document.getElementById("existTicket").value = 'ja';
+	  else
+		document.getElementById("existTicket").value = 'nein';
     }
-    AskDBcon();    
+    //AskDBcon();    
     
   </script>
 </head>
