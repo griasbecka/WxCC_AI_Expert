@@ -184,6 +184,11 @@
     // Liest mit .get() die Werte der Parameter aus
     const sAnrufer = urlParams.get('sAnrufer').replace("+", "%2B");
 	const existTicket = urlParams.get('existTicket');
+	document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
+	if (existTicket == true)
+		document.getElementById("existTicket").value = 'ja';
+	else
+		document.getElementById("existTicket").value = 'nein';
 	   
     //sAnrufer=sAnrufer.replace("+", "%2B");
 
@@ -244,11 +249,13 @@
       {
 
       }
-      document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
+      /*
+	  document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
 	  if (existTicket == true)
 		document.getElementById("existTicket").value = 'ja';
 	  else
 		document.getElementById("existTicket").value = 'nein';
+  	  */
     }
     //AskDBcon();    
     
