@@ -183,6 +183,7 @@
       
     // Liest mit .get() die Werte der Parameter aus
     const sAnrufer = urlParams.get('sAnrufer').replace("+", "%2B");
+	const existTicket = urlParams.get('existTicket');
     
     //sAnrufer=sAnrufer.replace("+", "%2B");
 
@@ -198,13 +199,17 @@
       headers: myHeaders,
       redirect: 'follow'
     };
+	document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
+	if (existTicket == true)
+		document.getElementById("existTicket").value = 'ja';
+	else
+		document.getElementById("existTicket").value = 'nein';
     
     /*
     fetch(DBconURL, requestOptions)
       .then(result => {
         //alert(result);
-        //document.getElementById("content").innerHTML = 'result: '+result;        
-        document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
+        //document.getElementById("content").innerHTML = 'result: '+result;                
         alert('yeah');
                 
         alert(response.json());
@@ -266,7 +271,7 @@
           </div>		  
 			<hr>		  
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=300><label for="company">Anfrage zu bestehendem Ticket</label></td><td><input type="text" id="company" name="company" class="readonly-field-small" value="ja / nein"></td></tr></table>
+            <table border=0 width="100%"><tr><td width=300><label for="company">Anfrage zu bestehendem Ticket</label></td><td><input type="text" id="existTicket" name="existTicket" class="readonly-field-small" value="ja / nein"></td></tr></table>
           </div> 
         </form>
       </div>
