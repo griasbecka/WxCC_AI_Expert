@@ -32,6 +32,7 @@
 
     async connectedCallback(){
       try{
+		console.error('ACP:: connectedCallback');
         this.shadowRoot.getElementById('action-refresh')?.addEventListener('click', ()=>this._loadEverything(true));
         this.shadowRoot.getElementById('action-available')?.addEventListener('click', ()=>this._goAvailable());
 
@@ -54,6 +55,7 @@
 
     async _loadEverything(force){
       this._status('Lade Kundenkontext …');
+	  console.error('ACP:: _loadEverything');
       const ani = await this._getAni(force);
       this._text('#ani', ani || '–', true);
       if(!ani){ this._status('Keine ANI gefunden.'); return; }
@@ -91,7 +93,7 @@
         const headers = { 'Accept':'application/json' };
         if(this._accessToken) headers['Authorization'] = `Bearer ${this._accessToken}`;
         // TODO: Eigene ERP-URL einsetzen
-		console.error('ACP - fetching url');
+		console.error('ACP:: fetching url');
         const url = `https://griasbecka.github.io/WxCC_AI_Expert/snow_fragment.html?sAnrufer=${encodeURIComponent(ani)}`;
         const res = await fetch(url, { headers, credentials:'include' });
         if(!res.ok) throw new Error('ERP '+res.status);
