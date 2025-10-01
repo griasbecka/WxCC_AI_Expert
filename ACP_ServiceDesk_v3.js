@@ -262,7 +262,7 @@
 		  <div class="container">
 			<div class="header">
 			  <!--<table class=myhead width="100%"><tr><td width=120><img src='https://wxcc1.demos.efa.ai/images/ACP_logo.png' border=0 width=50></td><td align=left><h1>Demo-Maske</h1></td></tr></table>-->
-				<table class=myhead width="100%"><tr><td width=120><img src='https://griasbecka.github.io/WxCC_AI_Expert/ACP_logo.png' border=0 width=50></td><td align=left><h1>ServiceNow Integrator2</h1></td></tr></table>
+				<table class=myhead width="100%"><tr><td width=120><img src='https://griasbecka.github.io/WxCC_AI_Expert/ACP_logo.png' border=0 width=50></td><td align=left><h1>ServiceNow Integrator</h1></td></tr></table>
 			</div>
 			<div class="upper-section">
 			  <div class="column">
@@ -419,6 +419,7 @@
         await this._initSdk();
         await this._loadEverything(false);
 		document.getElementById("content").value = 'Agent Name: '+agentName;
+		document.getElementById("content").value = agentName;
       }catch(e){ console.error('ACP:: connectedCallback Error '+e); }
     }
 
@@ -547,6 +548,3 @@
     customElements.define('my-company-dashboard', MyCompanyDashboard);
   }
 })();
-
-
-
