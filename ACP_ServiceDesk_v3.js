@@ -390,7 +390,7 @@
 			  <button type="submit" disabled>drink a beer</button>
 			</div>
 		  </div>
-		  <div id="content"></div>
+		  <div id="content">bla</div>
 		  <script>
 			document.getElementById("sanrufer").value = sAnrufer.replace("%2B", "+");
 			if (existTicket == "true")
