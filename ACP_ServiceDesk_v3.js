@@ -46,26 +46,33 @@
     async _initSdk(){
 	  console.error('ACP:: _initSdk');
       const SDK = (window.Desktop && window.Desktop.config) ? window.Desktop : null;
-      if(!SDK) throw new Error('SDK nicht gefunden (window.Desktop fehlt)');
+      if(!SDK) 
+	  {
+		console.error('ACP:: _initSdk SDK fehlt ');
+		return;
+	  }
       await SDK.config.init();
-      this._tag('#sdkState','ok','initialisiert');
+      console.error('ACP:: _initSdk SDK initiiert ok');
       // optionale Live-Events
       SDK.agentStateInfo?.addEventListener('eAgentStateChange',(evt)=>{
-        this._status('Agent State: '+(evt?.detail?.state||'unbekannt'));
+        console.error('ACP:: Agent State: '+(evt?.detail?.state||'unbekannt');
+		//this._status('Agent State: '+(evt?.detail?.state||'unbekannt'));
       });
       this._SDK = SDK;
     }
 
     async _loadEverything(force){
-      this._status('Lade Kundenkontext …');
+      //this._status('Lade Kundenkontext …');
 	  console.error('ACP:: _loadEverything');
       const ani = await this._getAni(force);
-      this._text('#ani', ani || '–', true);
-      if(!ani){ this._status('Keine ANI gefunden.'); return; }
-      this._status(`ANI ${ani} → ERP anfragen …`);
+      //this._text('#ani', ani || '–', true);
+	  console.error('ACP:: ani = '+ani+'-> frage SNOW an');
+      if(!ani){ console.error('ACP:: _loadEverything keine ani gefunden'); return; }
+      //this._status(`ANI ${ani} → ERP anfragen …`);	  
       const data = await this._fetchErp(ani);
       if(data) this._fill(data);
-      this._status('Fertig.');
+      console.error('ACP:: _loadEverything fertig');
+	  //this._status('Fertig.');
     }
 
     async _getAni(force){
