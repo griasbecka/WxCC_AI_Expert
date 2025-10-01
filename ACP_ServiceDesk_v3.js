@@ -69,7 +69,8 @@
       //this._status('Lade Kundenkontext …');
 	  console.error('ACP:: _loadEverything');
 	  try {
-		  const ani = await this._getAni(force);
+		  //const ani = await this._getAni(force);
+		  const ani = '%20B491735894743';
 		  //this._text('#ani', ani || '–', true);
 		  console.error('ACP:: ani = '+ani+'-> frage SNOW an');
 		  if(!ani){ console.error('ACP:: _loadEverything keine ani gefunden'); return; }
@@ -130,7 +131,8 @@
     }
 
     _fill(data){
-      const c = data?.customer || {};
+      /*
+	  const c = data?.customer || {};
       this._text('#custName', c.name ?? '–', true);
       this._text('#custNo', c.number ?? '–', true);
       this._text('#segment', c.segment ?? '–', true);
@@ -148,6 +150,8 @@
                <span class="tag">${o.status||''}</span></div>`;
         list.appendChild(row);
       }
+	  */
+	  this.shadowRoot.innerHTML = data;
     }
 
     async _goAvailable(){
