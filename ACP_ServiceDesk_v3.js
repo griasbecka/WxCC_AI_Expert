@@ -4,8 +4,8 @@
   'use strict';
 
   // Globale Fehler sichtbar machen
-  window.addEventListener('error', e => console.error('[my-app] onerror', e.message));
-  window.addEventListener('unhandledrejection', e => console.error('[my-app] unhandledrejection', e.reason));
+  //window.addEventListener('error', e => console.error('[my-app] onerror', e.message));
+  //window.addEventListener('unhandledrejection', e => console.error('[my-app] unhandledrejection', e.reason));
 
   class MyCompanyDashboard extends HTMLElement {
     constructor(){
