@@ -418,7 +418,7 @@
 		
         await this._initSdk();
         await this._loadEverything(false);
-		document.getElementById("content").value = "Agent Name: "+agentName;
+		document.getElementById("content").value = 'Agent Name: '+agentName;
       }catch(e){ console.error('ACP:: connectedCallback Error '+e); }
     }
 
@@ -547,5 +547,6 @@
     customElements.define('my-company-dashboard', MyCompanyDashboard);
   }
 })();
+
 
 
