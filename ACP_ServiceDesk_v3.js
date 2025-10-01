@@ -91,6 +91,7 @@
         const headers = { 'Accept':'application/json' };
         if(this._accessToken) headers['Authorization'] = `Bearer ${this._accessToken}`;
         // TODO: Eigene ERP-URL einsetzen
+		console.error('ACP - fetching url');
         const url = `https://griasbecka.github.io/WxCC_AI_Expert/snow_fragment.html?sAnrufer=${encodeURIComponent(ani)}`;
         const res = await fetch(url, { headers, credentials:'include' });
         if(!res.ok) throw new Error('ERP '+res.status);
