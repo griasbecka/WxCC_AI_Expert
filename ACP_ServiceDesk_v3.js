@@ -33,15 +33,18 @@
     async connectedCallback(){
       try{
 		console.error('ACP:: connectedCallback');
-        this.shadowRoot.getElementById('action-refresh')?.addEventListener('click', ()=>this._loadEverything(true));
+        /*
+		this.shadowRoot.getElementById('action-refresh')?.addEventListener('click', ()=>this._loadEverything(true));
         this.shadowRoot.getElementById('action-available')?.addEventListener('click', ()=>this._goAvailable());
-
+		*/
+		
         await this._initSdk();
         await this._loadEverything(false);
       }catch(e){ this._fatal(e); }
     }
 
     async _initSdk(){
+	  console.error('ACP:: _initSdk');
       const SDK = (window.Desktop && window.Desktop.config) ? window.Desktop : null;
       if(!SDK) throw new Error('SDK nicht gefunden (window.Desktop fehlt)');
       await SDK.config.init();
