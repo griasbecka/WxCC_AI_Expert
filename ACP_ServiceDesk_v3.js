@@ -31,8 +31,8 @@
     set accessToken(v){ this._accessToken = v; }
 
     async connectedCallback(){
-      try{
-		console.error('ACP:: connectedCallback');
+	  console.error('ACP:: connectedCallback');
+      try{		
         /*
 		this.shadowRoot.getElementById('action-refresh')?.addEventListener('click', ()=>this._loadEverything(true));
         this.shadowRoot.getElementById('action-available')?.addEventListener('click', ()=>this._goAvailable());
@@ -45,34 +45,39 @@
 
     async _initSdk(){
 	  console.error('ACP:: _initSdk');
-      const SDK = (window.Desktop && window.Desktop.config) ? window.Desktop : null;
-      if(!SDK) 
+	  try
 	  {
-		console.error('ACP:: _initSdk SDK fehlt ');
-		return;
-	  }
-      await SDK.config.init();
-      console.error('ACP:: _initSdk SDK initiiert ok');
-      // optionale Live-Events
-      SDK.agentStateInfo?.addEventListener('eAgentStateChange',(evt)=>{
-        console.error('ACP:: Agent State: '+(evt?.detail?.state||'unbekannt');
-		//this._status('Agent State: '+(evt?.detail?.state||'unbekannt'));
-      });
-      this._SDK = SDK;
-    }
-
+		  const SDK = (window.Desktop && window.Desktop.config) ? window.Desktop : null;
+		  if(!SDK) 
+		  {
+			console.error('ACP:: _initSdk SDK fehlt ');
+			return;
+		  }
+		  await SDK.config.init();
+		  console.error('ACP:: _initSdk SDK initiiert ok');
+		  // optionale Live-Events
+		  SDK.agentStateInfo?.addEventListener('eAgentStateChange',(evt)=>{
+			console.error('ACP:: Agent State: '+(evt?.detail?.state||'unbekannt');
+			//this._status('Agent State: '+(evt?.detail?.state||'unbekannt'));
+		  });
+		  this._SDK = SDK;    
+	  }catch(e){ console.error('ACP:: _initSdk Error '+e); }
+	}
+	
     async _loadEverything(force){
       //this._status('Lade Kundenkontext …');
 	  console.error('ACP:: _loadEverything');
-      const ani = await this._getAni(force);
-      //this._text('#ani', ani || '–', true);
-	  console.error('ACP:: ani = '+ani+'-> frage SNOW an');
-      if(!ani){ console.error('ACP:: _loadEverything keine ani gefunden'); return; }
-      //this._status(`ANI ${ani} → ERP anfragen …`);	  
-      const data = await this._fetchErp(ani);
-      if(data) this._fill(data);
-      console.error('ACP:: _loadEverything fertig');
-	  //this._status('Fertig.');
+	  try {
+		  const ani = await this._getAni(force);
+		  //this._text('#ani', ani || '–', true);
+		  console.error('ACP:: ani = '+ani+'-> frage SNOW an');
+		  if(!ani){ console.error('ACP:: _loadEverything keine ani gefunden'); return; }
+		  //this._status(`ANI ${ani} → ERP anfragen …`);	  
+		  const data = await this._fetchErp(ani);
+		  if(data) this._fill(data);
+		  console.error('ACP:: _loadEverything fertig');
+		  //this._status('Fertig.');
+	  }catch(e){ console.error('ACP:: _loadEverything Error '+e); }
     }
 
     async _getAni(force){
@@ -93,7 +98,7 @@
         for(const [k,v] of Object.entries(cad)) if(/^(ani|caller|from|clid)$/i.test(k)) return String(v);
         return null;
       }catch(e){
-        this._tag('#taskState','err','Fehler'); console.error(e); return null;
+        console.error('ACP:: _loadEverything Error '+e); return null;
       }
     }
 
