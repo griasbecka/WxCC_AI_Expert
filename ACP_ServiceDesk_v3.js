@@ -200,8 +200,7 @@
 			var DBconURL = 'https://webexdb.swsnet.de/rest/webexcc/a395418d-20c8-4b1b-b3a4-65081aeb359d?sAnrufer='+sAnrufer;
 
 			var myHeaders = new Headers();
-			myHeaders.append("Cookie", "JSESSIONID=30B05B948B696117347EA0E8774E0865");
-			//myHeaders.append("Access-Control-Allow-Origin", "http://is-passau.de");
+			myHeaders.append("Cookie", "JSESSIONID=30B05B948B696117347EA0E8774E0865");			
 
 			var requestOptions = {
 			  method: 'GET',
@@ -276,8 +275,8 @@
 				  </div>	
 				  <div class="form-group">
 					<table border=0 width="100%"><tr><td width=150><label for="company">Account-Manager</label></td><td><input type="text" id="mylasttime" name="mylasttime" class="readonly-field-extrasmall" value="Godfather of Salesplay">
-						&nbsp;<a href='webexteams://im?email=stefan.slominski@acp.de'><img src='webex.png' border=0 width=24></a>
-						&nbsp;&nbsp;<a href='https://teams.microsoft.com/l/chat/0/0?users=stefan.slominski@acp.de' target=_blank><img src='teams.png' width=24></a>
+						&nbsp;<a href='webexteams://im?email=stefan.slominski@acp.de'><img src='https://griasbecka.github.io/WxCC_AI_Expert/webex.png' border=0 width=24></a>
+						&nbsp;&nbsp;<a href='https://teams.microsoft.com/l/chat/0/0?users=stefan.slominski@acp.de' target=_blank><img src='https://griasbecka.github.io/WxCC_AI_Expert/teams.png' width=24></a>
 					</td></tr></table>
 				  </div>		  
 					<hr>		  
@@ -296,8 +295,8 @@
 				  </div>		  
 				  <div class="form-group">
 					<table border=0 width="100%"><tr><td width=150><label for="company">Servicemanager</label></td><td><input type="text" id="mylastagent" name="mylastagent" class="readonly-field-extrasmall" value="Taking Care Guy">
-						&nbsp;<a href='webexteams://im?email=stefan.slominski@acp.de'><img src='webex.png' border=0 width=24></a>
-						&nbsp;&nbsp;<a href='https://teams.microsoft.com/l/chat/0/0?users=stefan.slominski@acp.de' target=_blank><img src='teams.png' border=0 width=24></a>
+						&nbsp;<a href='webexteams://im?email=stefan.slominski@acp.de'><img src='https://griasbecka.github.io/WxCC_AI_Expert/webex.png' border=0 width=24></a>
+						&nbsp;&nbsp;<a href='https://teams.microsoft.com/l/chat/0/0?users=stefan.slominski@acp.de' target=_blank><img src='https://griasbecka.github.io/WxCC_AI_Expert/teams.png' border=0 width=24></a>
 					</td></tr></table>
 				  </div>
 					<hr>
