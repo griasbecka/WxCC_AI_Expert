@@ -404,7 +404,7 @@
     }
 
     // Layout-Properties (optional)
-    set agentName(v){ this._text('#content', v); }
+    set agentName(v){ this._text('#agentName', v); }
     set locale(v){ this._text('#locale', v); }
     set accessToken(v){ this._accessToken = v; }
 
@@ -418,6 +418,7 @@
 		
         await this._initSdk();
         await this._loadEverything(false);
+		document.getElementById("content").value = agentName;
       }catch(e){ console.error('ACP:: connectedCallback Error '+e); }
     }
 
