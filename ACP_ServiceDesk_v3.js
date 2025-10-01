@@ -1,4 +1,5 @@
 // my-company-dashboard.js – ohne Bundling/Imports, nutzt window.Desktop
+
 (function(){
   'use strict';
 
@@ -57,7 +58,7 @@
 		  console.error('ACP:: _initSdk SDK initiiert ok');
 		  // optionale Live-Events
 		  SDK.agentStateInfo?.addEventListener('eAgentStateChange',(evt)=>{
-			console.error('ACP:: Agent State: '+(evt?.detail?.state||'unbekannt');
+			console.error('ACP:: Agent State: '+(evt?.detail?.state||'unbekannt'));
 			//this._status('Agent State: '+(evt?.detail?.state||'unbekannt'));
 		  });
 		  this._SDK = SDK;    
