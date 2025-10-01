@@ -40,7 +40,7 @@
 		
         await this._initSdk();
         await this._loadEverything(false);
-      }catch(e){ this._fatal(e); }
+      }catch(e){ console.error('ACP:: connectedCallback Error '+e); }
     }
 
     async _initSdk(){
