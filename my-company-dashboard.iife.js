@@ -47,7 +47,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		\u2022 AgentState: <span id="agentState">\u2013</span> <br>
 		\u2022 Access Token: <span id="accessToken">\u2013</span>
 		</div>
-        <div>ANI: <strong id="ani">\u2013</strong></div>
+        <div>ANI: <span id="ani">\u2013</span></div>
 		<br><br>
 		<div>Debug: <span id="debug">\u2013</span></div>
       </div>
