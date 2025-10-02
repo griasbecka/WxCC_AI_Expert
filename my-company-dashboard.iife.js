@@ -41,8 +41,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		#mydebug{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace}
       </style>
       <div class="card">
-        <h2>Hallo Welt \u{1F44B}</h2>
-        <div class="muted">Eigene Web-Component im Agent Desktop</div>
+        
         <div id="erpFragment"></div>
 		<br><br>
 		<div>Debug:</div>
