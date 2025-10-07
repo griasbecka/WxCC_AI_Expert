@@ -201,10 +201,10 @@ button.small:hover {
 	display: flex;
 	gap: 1rem;
 }
-.two-cols-flex .left  { flex: 0 0 calc(30% - .5rem); }
-.two-cols-flex .right { flex: 1 0 calc(70% - .5rem); }
+.two-cols-flex .left  { flex: 1 1 30%; }
+.two-cols-flex .right { flex: 1 1 70%; }
 /* Mobile: stapeln */
 @media (max-width: 768px) {
 .two-cols-flex { flex-direction: column; }
-.two-cols-flex .left, .two-cols-flex .right { flex: 1 0 auto; }
+.two-cols-flex .left, .two-cols-flex .right { flex: 1 1 auto; }
 }
