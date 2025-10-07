@@ -81,9 +81,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 						  rows="12"
 						  placeholder="Hier Notizen eingeben \u2026"
 						  spellcheck="true"></textarea>
-				</div>
 			  </div>
-			  <div class="notes__meta"><span id="charCount">0</span> Zeichen</div>
 			</div>
 		  </div>
 		</div>		
