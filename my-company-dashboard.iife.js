@@ -44,7 +44,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         
         <div id="erpFragment"></div>
 		<br><br>
-		<div>Debug:</div>
+		<div>MyDebug:</div>
 		<div class="two-cols-flex">
 		  <div class="left" id="mydebug"></div>
 		  <div class="right">rechte Spalte (60%)</div>
