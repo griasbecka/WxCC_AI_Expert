@@ -90,7 +90,7 @@
 	.input-field-phonenr {
       background-color: #eff5da;
       padding: 6px;
-      border: none;
+      border: 1px;
       border-radius: 4px;
       color: #333;
       width: 50%;
