@@ -47,7 +47,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			flex: 1 1 auto;
 			min-height: 12rem;  /* gro\xDF */
 			max-height: 38rem;
-			width: 100%;
+			width: 98%;
 			resize: vertical;   /* Benutzer darf vergr\xF6\xDFern */
 			padding:.75rem .9rem;
 			border:1px solid #e5e7eb; border-radius:10px;
