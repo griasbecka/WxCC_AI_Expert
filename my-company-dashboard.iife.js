@@ -54,6 +54,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			background:#fff; color:#111827;
 			box-sizing:border-box;
 		  }
+		  .section-title {
+			  font-weight: 600;
+			  margin-bottom: .5rem;  /* <<\u2014 \u201EZeilenumbruch\u201C als sauberes Spacing */
+			}
 
 		  /* mobil: untereinander */
 		  @media (max-width: 768px) {
@@ -80,8 +84,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         <div id="erpFragment"></div>
 		<br><hr><br>		
 		<div class="two-cols-flex">
-		  <label for="mydebug" class="notes__label">MyDebug</label><br>
-		  <div class="left" id="mydebug"></div>
+		  <div class="left">
+			<div class="section-title">MyDebug</div>
+			<div id="mydebug"></div>
+		  </div>
 		  <div class="right">
 			<div class="notes">
 			  <label for="notesInput" class="notes__label">Notizen</label>
