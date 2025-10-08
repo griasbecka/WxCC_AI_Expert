@@ -39,20 +39,20 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         .card{border:1px solid #e5e7eb;border-radius:12px;padding:16px;background:#fff}
         .muted{color:#6b7280}
 		#mydebug{
-  margin:0;
-  width:100%;
-  height:220px;
-  max-height:220px;
-  box-sizing:border-box;
-  padding:6px;
-  border:1px solid #e5e7eb;
-  border-radius:8px;
-  background:#fafafa;
-  font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;
-  line-height:1.3;
-  overflow:auto;
-  white-space:pre;   /* bei <pre> trotzdem explizit */
-}
+		  margin:0;
+		  width:100%;
+		  height:250px;
+		  max-height:250px;
+		  box-sizing:border-box;
+		  padding:6px;
+		  border:1px solid #e5e7eb;
+		  border-radius:8px;
+		  background:#f2f2f2;
+		  font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;
+		  line-height:1.3;
+		  overflow:auto;
+		  white-space:pre;   /* bei <pre> trotzdem explizit */
+		}
 		
 		.notes { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }		  
 		  .notes__row { display:flex; align-items:flex-start; gap:.75rem; }
