@@ -38,7 +38,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         :host{display:block;font:14px/1.4 system-ui,Segoe UI,Roboto,Arial;color:#111827}
         .card{border:1px solid #e5e7eb;border-radius:12px;padding:16px;background:#fff}
         .muted{color:#6b7280}
-		#mydebug{white-space:pre-wrap;overflow-y: scroll;font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace}
+		#mydebug{
+  margin:0;
+  width:100%;
+  height:220px;
+  max-height:220px;
+  box-sizing:border-box;
+  padding:6px;
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  background:#fafafa;
+  font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;
+  line-height:1.3;
+  overflow:auto;
+  white-space:pre;   /* bei <pre> trotzdem explizit */
+}
 		
 		.notes { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }		  
 		  .notes__row { display:flex; align-items:flex-start; gap:.75rem; }
@@ -90,7 +104,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		<div class="two-cols-flex">
 		  <div class="left">
 			<div class="section-title">MyDebug</div>
-			<div id="mydebug"></div>
+			<pre id="mydebug"></pre>
 		  </div>
 		  <div class="right">
 			<div class="notes">
