@@ -14,13 +14,13 @@
       <div class="column">
         <form>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Firma</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Beispiel GmbH" readonly></td></tr></table>
+            <table border=0 width="100%"><tr><td width=150><label for="kundenname">Firma</label></td><td><input type="text" id="kundenname" name="kundenname" class="readonly-field" value="Beispiel GmbH" readonly></td></tr></table>
           </div>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Adresse</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Musterstrasse 123, 94051 Hauzenberg"></td></tr></table>			
+            <table border=0 width="100%"><tr><td width=150><label for="adresse">Adresse</label></td><td><input type="text" id="adresse" name="adresse" class="readonly-field" value="Musterstrasse 123, 94051 Hauzenberg"></td></tr></table>			
           </div>	
 		  <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Account-Manager</label></td><td><input type="text" id="mylasttime" name="mylasttime" class="readonly-field-extrasmall" value="Godfather of Salesplay">
+            <table border=0 width="100%"><tr><td width=150><label for="accountManager">Account-Manager</label></td><td><input type="text" id="accountManager" name="accountManager" class="readonly-field-extrasmall" value="Godfather of Salesplay">
 				&nbsp;<a href='webexteams://im?email=stefan.slominski@acp.de'><img src='https://griasbecka.github.io/WxCC_AI_Expert/webex.png' border=0 width=24></a>
 				&nbsp;&nbsp;<a href='https://teams.microsoft.com/l/chat/0/0?users=stefan.slominski@acp.de' target=_blank><img src='https://griasbecka.github.io/WxCC_AI_Expert/teams.png' width=24></a>
 			</td></tr></table>
@@ -42,17 +42,19 @@
 				</tr></table>
           </div>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Name Anrufer</label></td><td><input type="text" id="company" name="company" class="readonly-field" value="Max Mustermann"></td></tr></table>
+            <table border=0 width="100%"><tr><td width=150><label for="ansprechpartner">Ansprechpartner</label></td><td><input type="text" id="ansprechpartner" name="ansprechpartner" class="readonly-field" value="Max Mustermann"></td></tr></table>
           </div>		  
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=150><label for="company">Servicemanager</label></td><td><input type="text" id="mylastagent" name="mylastagent" class="readonly-field-extrasmall" value="Taking Care Guy">
+            <table border=0 width="100%"><tr><td width=150><label for="serviceManager">Servicemanager</label></td><td><input type="text" id="serviceManager" name="serviceManager" class="readonly-field-extrasmall" value="Taking Care Guy">
 				&nbsp;<a href='webexteams://im?email=stefan.slominski@acp.de'><img src='https://griasbecka.github.io/WxCC_AI_Expert/webex.png' border=0 width=24></a>
 				&nbsp;&nbsp;<a href='https://teams.microsoft.com/l/chat/0/0?users=stefan.slominski@acp.de' target=_blank><img src='https://griasbecka.github.io/WxCC_AI_Expert/teams.png' border=0 width=24></a>
 			</td></tr></table>
           </div>
 			<hr>
           <div class="form-group">
-            <table border=0 width="100%"><tr><td width=300><label for="company"><font color=#b00e2c>Aktuell offene Tickets</font></label></td><td><input type="text" id="company" name="company" class="readonly-field_bold-small" value="4"></td></tr></table>
+            <table border=0 width="100%">
+				<tr><td width=300><label for="openTicketsCount"><font color=#b00e2c>Aktuell offene Tickets</font></label></td><td><input type="text" id="openTicketsCount" name="openTicketsCount" class="readonly-field_bold-small" value="4"></td></tr>
+			</table>
           </div>
         </form>
       </div>
@@ -60,7 +62,7 @@
     </div>
     <div class="sub-section">
       <h2>Offene Tickets</h2>
-      <table class="ticket-table">
+      <table class="ticket-table" id="openTickets">
         <thead>
           <tr>
             <th width=150>TicketNr</th>
