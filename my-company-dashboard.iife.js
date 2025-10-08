@@ -80,7 +80,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         <div id="erpFragment"></div>
 		<br><hr><br>		
 		<div class="two-cols-flex">
-		  <label for="mydebug" class="notes__label">MyDebug</label>
+		  <label for="mydebug" class="notes__label">MyDebug</label><br>
 		  <div class="left" id="mydebug"></div>
 		  <div class="right">
 			<div class="notes">
