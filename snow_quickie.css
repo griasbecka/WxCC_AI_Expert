@@ -163,7 +163,7 @@ label {
 
 /* Optional: Hover-Effekt für bessere Lesbarkeit */
 .ticket-table tbody tr:hover {
-  background: #d0e7f5;
+  background: #ebeced;
 }
 
 th.icon, td.icon { text-align: center; width: 28px; }
