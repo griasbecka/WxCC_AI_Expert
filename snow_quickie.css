@@ -151,8 +151,8 @@ label {
   vertical-align: middle;
 }
 
-th.icon, td.icon { text-align: center; width: 40px; }
-.icon-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+th.icon, td.icon { text-align: center; width: 30px; }
+.icon-col { display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .icon-col img { display: block; width: 24px; height: 24px; }
 
 button {
