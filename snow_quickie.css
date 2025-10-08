@@ -143,6 +143,11 @@ label {
   background-color: #D8C8DC;
 }
 
+.ticket-table th.sortable { cursor: pointer; user-select: none; position: relative; }
+.ticket-table th[aria-sort="asc"]::after  { content: "▲"; position: absolute; right: 6px; }
+.ticket-table th[aria-sort="desc"]::after { content: "▼"; position: absolute; right: 6px; }
+
+
 .ticket-table td {
   padding: 8px;
   text-align: left;
