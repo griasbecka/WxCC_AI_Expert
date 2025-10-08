@@ -4,8 +4,8 @@
 		"Kundenname": "Mustermann GmbH",
 		"Adresse": "Brückenstr. 34, 94051 Hauzenberg",
 		"Ansprechpartner": "John Doe",
-		"AccountManager": "Stefan Slominski",
-		"ServiceManager": "Stefan Slominski"
+		"AccountManager": "Ariane Schreiner",
+		"ServiceManager": "Markus Neumann"
 	}
   ],
   "tickets": [
