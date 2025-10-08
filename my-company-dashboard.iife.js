@@ -40,8 +40,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         .muted{color:#6b7280}
 		#mydebug{white-space:pre-wrap;overflow-y: scroll;font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace}
 		
-		.notes { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-		  .notes__label { display:block; margin-bottom:.5rem; color:#374151; }
+		.notes { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }		  
 		  .notes__row { display:flex; align-items:flex-start; gap:.75rem; }
 		  .notes__textarea {
 			flex: 1 1 auto;
@@ -54,8 +53,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			background:#fff; color:#111827;
 			box-sizing:border-box;
 		  }
-		  .section-title {
-			  display:block; margin-bottom:.5rem; color:#374151;
+		  .section-title,
+			.notes__label {
+			  display: block;
+			  margin-bottom: .5rem;
+			  color: #374151;
+			  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+			  font-weight: 600; /* fett */
 			}
 
 		  /* mobil: untereinander */
