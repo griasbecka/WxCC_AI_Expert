@@ -158,7 +158,7 @@ label {
 
 /* Grundvariante: jede 2. Zeile einfärben */
 .ticket-table tbody tr:nth-child(even) {
-  background: #ebeced;  /* wähle deine Farbe */
+  background: #fdfdfe;  /* wähle deine Farbe */
 }
 
 /* Optional: Hover-Effekt für bessere Lesbarkeit */
