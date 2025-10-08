@@ -198,15 +198,4 @@ button.small:hover {
   } 
 }
 
-.two-cols-flex {
-	display: flex;
-	gap: 1rem;
-	background-color: #f2f2f2;
-}
-.two-cols-flex .left  { flex: 1 1 40%; }
-.two-cols-flex .right { flex: 1 1 60%; }
-/* Mobile: stapeln */
-@media (max-width: 768px) {
-.two-cols-flex { flex-direction: column; }
-.two-cols-flex .left, .two-cols-flex .right { flex: 1 1 auto; }
-}
+

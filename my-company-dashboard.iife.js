@@ -60,6 +60,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			.notes__row { flex-direction:column; }
 			.notes__actions { align-self:flex-end; }
 		  }
+		  
+		  .two-cols-flex {
+				display: flex;
+				gap: 1rem;
+				background-color: #f2f2f2;
+			}
+			.two-cols-flex .left  { flex: 1 1 40%; }
+			.two-cols-flex .right { flex: 1 1 60%; padding: 5px; border-radius: 5px;}
+			/* Mobile: stapeln */
+			@media (max-width: 768px) {
+			.two-cols-flex { flex-direction: column; }
+			.two-cols-flex .left, .two-cols-flex .right { flex: 1 1 auto; }
+			}
       </style> 
 	  
       <div class="card">
