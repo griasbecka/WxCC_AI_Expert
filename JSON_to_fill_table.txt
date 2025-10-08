@@ -1,0 +1,45 @@
+{
+  "Kunde": [
+    {
+		"Kundenname": "Mustermann GmbH",
+		"Adresse": "Brückenstr. 34, 94051 Hauzenberg",
+		"Ansprechpartner": "John Doe",
+		"AccountManager": "Stefan Slominski",
+		"ServiceManager": "Stefan Slominski"
+	}
+  ],
+  "tickets": [
+    {
+      "ticketNr":        { "text": "CHG0084341", "href": "https://acpprod.service-now.com/change_request.do?sys_id=1daae53283db5e50f5ae9cdfeeaad32c&sysparm_record_target=task&sysparm_record_row=5&sysparm_record_rows=8&sysparm_record_list=active%3Dtrue%5Eassigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe%5EstateNOT+IN3%2C4%2C7%2C8%2C5%2C6%5EORDERBYshort_description" },
+      "topic":           "User in Webex anlegen",
+      "assignmentGroup": "HZB.Collaboration",
+      "assignedTo":      "Stefan Slominski",
+      "lastUpdated":     "11.09.2025",
+      "needsAttention":  { false }
+    },
+    {
+      "ticketNr":        { "text": "CHG1234567", "href": "https://acpprod.service-now.com/change_request.do?sys_id=1daae53283db5e50f5ae9cdfeeaad32c&sysparm_record_target=task&sysparm_record_row=5&sysparm_record_rows=8&sysparm_record_list=active%3Dtrue%5Eassigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe%5EstateNOT+IN3%2C4%2C7%2C8%2C5%2C6%5EORDERBYshort_description" },
+      "topic":           "O365 Problem mit Resourcenpostfach",
+      "assignmentGroup": "HZB.EnterpriseApplication",
+      "assignedTo":      "Stefan Maximilian",
+      "lastUpdated":        "07.09.2025",
+      "needsAttention":  { false }
+    },
+    {
+      "ticketNr":        { "text": "INC1111222", "href": "https://acpprod.service-now.com/change_request.do?sys_id=1daae53283db5e50f5ae9cdfeeaad32c&sysparm_record_target=task&sysparm_record_row=5&sysparm_record_rows=8&sysparm_record_list=active%3Dtrue%5Eassigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe%5EstateNOT+IN3%2C4%2C7%2C8%2C5%2C6%5EORDERBYshort_description" },
+      "topic":           "Citrix - Golden Image verschwunden",
+      "assignmentGroup": "HZB.Dispo",
+      "assignedTo":      "",
+      "lastUpdated":        "30.08.2025",
+      "needsAttention":  { true }
+    },
+    {
+      "ticketNr":        { "text": "CHG9876543", "href": "https://acpprod.service-now.com/change_request.do?sys_id=1daae53283db5e50f5ae9cdfeeaad32c&sysparm_record_target=task&sysparm_record_row=5&sysparm_record_rows=8&sysparm_record_list=active%3Dtrue%5Eassigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe%5EstateNOT+IN3%2C4%2C7%2C8%2C5%2C6%5EORDERBYshort_description" },
+      "topic":           "Projekt Network as a Service",
+      "assignmentGroup": "HZB.SecureInfrastructure Green",
+      "assignedTo":      "Jonas Pongratz",
+      "lastUpdated":        "08.09.2025",
+      "needsAttention":  { false }
+    }
+  ]
+}
