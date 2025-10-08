@@ -113,7 +113,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 				<textarea id="notesInput"
 						  class="notes__textarea"
 						  rows="12"
-						  placeholder="Hier Notizen eingeben \u2026"
+						  placeholder="Hier Notizen eingeben..."
 						  spellcheck="true"></textarea>
 			  </div>
 			</div>
