@@ -59,7 +59,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			  margin-bottom: .5rem;
 			  color: #374151;
 			  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-			  font-weight: 600; /* fett */
+			  font-weight: bold; 
+			  font-size: 14px;
 			}
 
 		  /* mobil: untereinander */
@@ -73,7 +74,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 				gap: 1rem;
 				background-color: #f2f2f2;
 			}
-			.two-cols-flex .left  { flex: 1 1 40%; }
+			.two-cols-flex .left  { flex: 1 1 40%; padding: 5px; border-radius: 5px;}
 			.two-cols-flex .right { flex: 1 1 60%; padding: 5px; border-radius: 5px;}
 			/* Mobile: stapeln */
 			@media (max-width: 768px) {
