@@ -140,7 +140,7 @@ label {
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 14px;
-  background-color: #D8C8DC;
+  background-color: #a2c8e0;
 }
 
 .ticket-table th.sortable { cursor: pointer; user-select: none; position: relative; }
@@ -158,12 +158,12 @@ label {
 
 /* Grundvariante: jede 2. Zeile einfärben */
 .ticket-table tbody tr:nth-child(even) {
-  background: #f6f7fb;  /* wähle deine Farbe */
+  background: #ebeced;  /* wähle deine Farbe */
 }
 
 /* Optional: Hover-Effekt für bessere Lesbarkeit */
 .ticket-table tbody tr:hover {
-  background: #eef2ff;
+  background: #d0e7f5;
 }
 
 th.icon, td.icon { text-align: center; width: 28px; }
