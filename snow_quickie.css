@@ -152,7 +152,7 @@ label {
 }
 
 th.icon, td.icon { text-align: center; width: 28px; }
-.icon-col { display: flex; flex-direction: column; align-items: center; padding-right: 4px; }
+.icon-col { display: flex; flex-direction: column; align-items: center; padding-left: 4px; }
 .icon-col img { display: block; width: 24px; height: 24px; }
 .text-right { text-align: right; }
 
