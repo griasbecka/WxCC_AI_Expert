@@ -135,10 +135,14 @@ label {
   margin-left: 40px;
 }
 
+.ticket-table thead{
+  border-radius: 4px;  
+}
+
 .ticket-table th{
   padding: 8px;
   text-align: left;
-  border-radius: 2px;
+  border-radius: 0px;
   border-bottom: 1px solid #ddd;
   font-size: 14px;
   background-color: #3D4A52;/*a2c8e0;*/
