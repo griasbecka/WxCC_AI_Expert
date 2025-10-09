@@ -149,7 +149,7 @@ label {
 
 .ticket-table th{
   /*position: sticky;	*/
-  padding: 8px;
+  padding: 4px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 14px;
@@ -172,7 +172,7 @@ label {
 
 
 .ticket-table td {
-  padding: 8px;
+  padding: 4px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 14px;
@@ -197,7 +197,7 @@ th.icon, td.icon { text-align: center; width: 28px; }
 button {
   background-color: #3D4A52;
   color: white;
-  padding: 4px 4px;
+  padding: 10px 10px;
   border: none;
   cursor: pointer;
   font-size: 14px;
