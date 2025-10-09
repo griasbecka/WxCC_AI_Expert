@@ -17,6 +17,7 @@ body {
 .header {
   text-align: center;
   margin-bottom: 8px;
+  padding: 2px;
 }
 
 .myhead {
@@ -225,7 +226,7 @@ button.small {
 }
 button.small:hover {
   background-color: #83c22b;/*AAC936;*/
-  color: #fff;
+  color: #ebeced;
   font-weight: bold;
 }
 
