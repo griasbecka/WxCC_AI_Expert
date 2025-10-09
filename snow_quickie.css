@@ -224,7 +224,7 @@ button.small {
   width: 150px;
 }
 button.small:hover {
-  background-color: #AAC936;
+  background-color: #83c22b;/*AAC936;*/
   color: #3D4A52;
   font-weight: bold;
 }
