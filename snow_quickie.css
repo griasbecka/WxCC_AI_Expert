@@ -134,7 +134,7 @@ label {
   /* Variante A: fixe Maxhöhe (~5 Zeilen + Header). Passt bei üblichen Row-Höhen. */
   max-height: 280px;               /* ggf. 260–320px tweaken */
   overflow-y: auto;
-  border: 1px solid #e5e7eb;
+  border: 0px solid #e5e7eb;
   border-radius: 8px;
 }
 
