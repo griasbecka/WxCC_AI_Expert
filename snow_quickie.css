@@ -129,12 +129,28 @@ label {
   margin-bottom: 10px;
 }
 
+.table-scroll{
+  /* Variante A: fixe Maxhöhe (~5 Zeilen + Header). Passt bei üblichen Row-Höhen. */
+  max-height: 280px;               /* ggf. 260–320px tweaken */
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
 .ticket-table {
   width: 93%;
   border-collapse: collapse;/*separate;*/
   margin-left: 40px;
 }
 
+.ticket-table thead th{
+  position: sticky;
+  top: 0;
+  background: #fff;                /* Header nicht „durchscheinen“ lassen */
+  z-index: 1;
+  /* optional: leichter Shadow, damit man die Trennung sieht */
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
 .ticket-table thead th:first-child { border-top-left-radius: 4px;border-bottom-left-radius: 4px; }
 .ticket-table thead th:last-child  { border-top-right-radius: 4px;border-bottom-right-radius: 4px; }
 
@@ -145,6 +161,7 @@ label {
   font-size: 14px;
   background-color: #849fb0;/*a2c8e0;*/
   color: #fff;
+  vertical-align: middle;
 }
 
 .ticket-table th.sortable { cursor: pointer; user-select: none; position: relative; }
