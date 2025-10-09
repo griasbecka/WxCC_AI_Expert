@@ -131,18 +131,16 @@ label {
 
 .ticket-table {
   width: 93%;
-  border-collapse: collapse;
+  border-collapse: separate;/*collapse;*/
   margin-left: 40px;
 }
 
-.ticket-table thead{
-  border-radius: 4px;  
-}
+.ticket-table thead th:first-child { border-top-left-radius: 4px; }
+.ticket-table thead th:last-child  { border-top-right-radius: 4px; }
 
 .ticket-table th{
   padding: 8px;
   text-align: left;
-  border-radius: 0px;
   border-bottom: 1px solid #ddd;
   font-size: 14px;
   background-color: #3D4A52;/*a2c8e0;*/
