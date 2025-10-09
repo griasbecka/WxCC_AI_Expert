@@ -926,14 +926,11 @@
 					"agentName": "$STORE.agent.agentName",
 					"accessToken": "$STORE.auth.accessToken"					
 				  },
+				  "expose": ["Desktop", "$STORE"],      
+				  "permissions": ["task.read", "cad.read"],
 				  "attributes": {
 					"data-feature-flag": "alpha",
 					"locale": "$STORE.app.locale"
-				  },
-				  "wrapper": {
-					"title": "ServiceNow Quickie",
-					"id": "snow-quickie-wrapper",
-					"maximizeAreaName": "app-maximize-area"
 				  }
 				}
 			  ]
@@ -1308,6 +1305,8 @@
 				  "locale": "$STORE.app.locale",
 				  "accessToken": "$STORE.auth.accessToken"
 				},
+				"expose": ["Desktop", "$Store"],      
+				"permissions": ["task.read", "cad.read"],
 				"attributes": {
 				  "data-feature-flag": "alpha"
 				}
