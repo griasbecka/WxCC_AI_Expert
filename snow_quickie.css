@@ -141,6 +141,7 @@ label {
   border-bottom: 1px solid #ddd;
   font-size: 14px;
   background-color: #4fa0bd;/*a2c8e0;*/
+  color: #fff;
 }
 
 .ticket-table th.sortable { cursor: pointer; user-select: none; position: relative; }
