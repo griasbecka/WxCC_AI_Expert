@@ -158,7 +158,7 @@ label {
   vertical-align: middle;
 }
 .ticket-table thead th{
-  position: sticky;
+  /*position: sticky;*/
   top: 0;
   /*background: #fff;                /* Header nicht „durchscheinen“ lassen */
   z-index: 3;
