@@ -8743,7 +8743,7 @@ const e=new Map,t=new Map,r=(e,t)=>
       }
     }
     _saveSnapshot({ interactionId, ani, eventType }) {
-      console.warn("HIDDEN: saving snapshot");
+      console.warn("HIDDEN: saving snapshot: " + ani);
       const snapshot = { interactionId, ani, eventType, ts: Date.now() };
       const prev = window.__WXCC_LAST;
       if (!prev || prev.ani !== ani || prev.interactionId !== interactionId || prev.eventType !== eventType) {
