@@ -8696,12 +8696,14 @@ const e=new Map,t=new Map,r=(e,t)=>
       }
     }
     async _init() {
+      console.warn("HIDDEN: init Desktop");
       await import_sdk.Desktop.config.init({
         widgetName: "acp-servicedesk-hidden",
         widgetProvider: "Custom"
         // oder ein für euch passender Providername
       });
       if (import_sdk.Desktop.agentContact && typeof import_sdk.Desktop.agentContact.addEventListener === "function") {
+        console.warn("HIDDEN: addListener");
         this._events.forEach((evt) => import_sdk.Desktop.agentContact.addEventListener(evt, this._on));
       }
       await this._snapshotFromTaskMap();
@@ -8713,6 +8715,7 @@ const e=new Map,t=new Map,r=(e,t)=>
       var _a;
       if (!this._mounted) return;
       try {
+        console.warn("HIDDEN: getting TaskMap");
         const tm = await import_sdk.Desktop.actions.getTaskMap();
         if (!tm || !Object.keys(tm).length) return;
         const tasks = Object.values(tm);
@@ -8729,6 +8732,7 @@ const e=new Map,t=new Map,r=(e,t)=>
     _on(evt) {
       var _a, _b, _c;
       try {
+        console.warn("HIDDEN: Evt fired");
         const detail = (evt == null ? void 0 : evt.detail) || {};
         const cad = ((_a = detail == null ? void 0 : detail.data) == null ? void 0 : _a.callAssociatedData) || (detail == null ? void 0 : detail.callAssociatedData) || ((_b = detail == null ? void 0 : detail.interaction) == null ? void 0 : _b.callAssociatedData) || (detail == null ? void 0 : detail.cad) || {};
         const ani = this._extractAniLike(cad);
@@ -8739,6 +8743,7 @@ const e=new Map,t=new Map,r=(e,t)=>
       }
     }
     _saveSnapshot({ interactionId, ani, eventType }) {
+      console.warn("HIDDEN: saving snapshot");
       const snapshot = { interactionId, ani, eventType, ts: Date.now() };
       const prev = window.__WXCC_LAST;
       if (!prev || prev.ani !== ani || prev.interactionId !== interactionId || prev.eventType !== eventType) {
