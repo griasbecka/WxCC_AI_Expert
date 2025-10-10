@@ -708,6 +708,11 @@
     },
     "area": {
       "advancedHeader": [
+	    {
+		  "comp": "ACP_ServiceDesk_hidden",
+		  "script": "https://griasbecka.github.io/WxCC_AI_Expert/ACP-SD-hidden-widget.js",
+		  "attributes": { "style": "display:none" }
+		},
         {
           "comp": "digital-outbound",
           "script": "https://wc.imiengage.io/AIC/engage_aic.js",
