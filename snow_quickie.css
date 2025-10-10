@@ -208,9 +208,14 @@ button {
 }
 
 button:hover {
-  background-color: #83c22b;/*AAC936;*/
+  /*
+  background-color: #83c22b;
   color: #ebeced;
   font-weight: bold;
+  */
+  color: #83c22b;
+  font-weight: bold;
+  box-shadow: 0 0 0 4px #83c22b;
 }
 
 button.small {
