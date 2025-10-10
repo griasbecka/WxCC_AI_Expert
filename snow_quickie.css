@@ -208,7 +208,7 @@ button {
 }
 
 button:hover {
-  background-color: #83c22b;
+  background-color: #849fb0;
   color: #ebeced;
   /*font-weight: bold;*/
   box-shadow: 0 0 0 4px rgba(61,74,82,.15);
