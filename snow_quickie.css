@@ -210,8 +210,9 @@ button {
 button:hover {
   background-color: #849fb0;
   color: #ebeced;
-  /*font-weight: bold;*/
-  box-shadow: 0 0 0 4px rgba(61,74,82,.15);
+  font-weight: bold;
+  /*box-shadow: 0 0 0 4px rgba(61,74,82,.15);*/
+  box-shadow: 0 0 0 4px #eff5da;
   outline: none;
 }
 
@@ -227,7 +228,7 @@ button.small {
   width: 150px;
 }
 button.small:hover {
-  background-color: #83c22b;/*AAC936;*/
+  background-color: #849fb0;/*83c22b;*/
   color: #ebeced;
   font-weight: bold;
 }
