@@ -8696,7 +8696,11 @@ const e=new Map,t=new Map,r=(e,t)=>
       }
     }
     async _init() {
-      await import_sdk.Desktop.config.init();
+      await import_sdk.Desktop.config.init({
+        widgetName: "acp-servicedesk-hidden",
+        widgetProvider: "Custom"
+        // oder ein für euch passender Providername
+      });
       if (import_sdk.Desktop.agentContact && typeof import_sdk.Desktop.agentContact.addEventListener === "function") {
         this._events.forEach((evt) => import_sdk.Desktop.agentContact.addEventListener(evt, this._on));
       }
