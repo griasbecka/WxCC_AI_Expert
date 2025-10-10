@@ -8736,6 +8736,8 @@ const e=new Map,t=new Map,r=(e,t)=>
         const detail = (evt == null ? void 0 : evt.detail) || {};
         const cad = ((_a = detail == null ? void 0 : detail.data) == null ? void 0 : _a.callAssociatedData) || (detail == null ? void 0 : detail.callAssociatedData) || ((_b = detail == null ? void 0 : detail.interaction) == null ? void 0 : _b.callAssociatedData) || (detail == null ? void 0 : detail.cad) || {};
         const ani = this._extractAniLike(cad);
+        console.warn("HIDDEN: Evt ani=" + ani);
+        console.warn("HIDDEN: Evt ani manual=" + detail.interaction.callAssociatedDetails.ani);
         const interactionId = ((_c = detail == null ? void 0 : detail.data) == null ? void 0 : _c.interactionId) || (detail == null ? void 0 : detail.interactionId) || (detail == null ? void 0 : detail.contactId) || null;
         this._saveSnapshot({ interactionId, ani: ani || null, eventType: evt.type });
       } catch (e) {
