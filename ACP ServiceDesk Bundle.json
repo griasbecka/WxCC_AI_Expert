@@ -710,7 +710,7 @@
       "advancedHeader": [
 	    {
 		  "comp": "acp-servicedesk-hidden",
-		  "script": "https://griasbecka.github.io/WxCC_AI_Expert/ACP-SD-hidden-widget.js",
+		  "script": "https://griasbecka.github.io/WxCC_AI_Expert/ACP-SD-hidden-widget.iife.js",
 		  "attributes": { "style": "display:none" }
 		},
         {
