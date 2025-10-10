@@ -8733,7 +8733,7 @@ const e=new Map,t=new Map,r=(e,t)=>
       var _a, _b, _c;
       try {
         console.warn("HIDDEN: Evt fired");
-        const detail = (evt == null ? void 0 : evt.detail) || {};
+        const detail = (evt == null ? void 0 : evt.data) || {};
         const cad = ((_a = detail == null ? void 0 : detail.data) == null ? void 0 : _a.callAssociatedData) || (detail == null ? void 0 : detail.callAssociatedData) || ((_b = detail == null ? void 0 : detail.interaction) == null ? void 0 : _b.callAssociatedData) || (detail == null ? void 0 : detail.cad) || {};
         const ani = this._extractAniLike(cad);
         console.warn("HIDDEN: Evt ani=" + ani);
