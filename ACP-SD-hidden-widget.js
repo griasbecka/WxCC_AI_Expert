@@ -54,6 +54,7 @@ class ACP_SD_hiddenWidget extends HTMLElement {
       };
       // global in Memory + persistent
       window.__WXCC_LAST = snapshot;
+	  console.warn('ACP_SD_hiddenWidget: saving: '+JSON.stringify(snapshot));
       try { localStorage.setItem('wxcc:ani_saver', JSON.stringify(snapshot)); } catch {}
       // optional: Log
       // console.debug('Bridge snapshot', snapshot);
