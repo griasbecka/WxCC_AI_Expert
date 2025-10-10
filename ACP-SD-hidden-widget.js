@@ -63,4 +63,4 @@ class ACP_SD_hiddenWidget extends HTMLElement {
     }
   }
 }
-customElements.define('ACP_ServiceDesk_hidden', ACP_SD_hiddenWidget);
+customElements.define('acp-servicedesk-hidden', ACP_SD_hiddenWidget);
