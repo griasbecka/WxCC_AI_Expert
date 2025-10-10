@@ -1,9 +1,15 @@
-class ACP_SD_hiddenWidget extends HTMLElement {
+import { Desktop } from '@wxcc-desktop/sdk';
+
+class ACP_SD_hiddenWidget extends HTMLElement 
+{
   constructor(){ super(); this._on = this._on.bind(this); }
-  connectedCallback(){
+  async connectedCallback(){
     // keine UI
     // sichere Event-Bindings (nur wenn vorhanden)
-    const AC = window.Desktop?.agentContact;
+	await Desktop.config.init();           // einmalig vor der Nutzung
+	
+    
+	const AC = Desktop.agentContact;
     if (!AC) { console.warn('ACP_SD_hiddenWidget: Desktop.agentContact fehlt'); return; }
 
     ['eAgentContactConnected','eAgentContactUpdated','eAgentOfferContact','eAgentContactAssigned','eAgentContactWrapUp']
