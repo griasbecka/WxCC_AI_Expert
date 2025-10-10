@@ -1,10 +1,31 @@
 (() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __knownSymbol = (name, symbol) => (symbol = Symbol[name]) ? symbol : Symbol.for("Symbol." + name);
+  var __typeError = (msg) => {
+    throw TypeError(msg);
+  };
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -24,6 +45,50 @@
     isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
     mod
   ));
+  var __await = function(promise, isYieldStar) {
+    this[0] = promise;
+    this[1] = isYieldStar;
+  };
+  var __asyncGenerator = (__this, __arguments, generator) => {
+    var resume = (k, v, yes, no) => {
+      try {
+        var x = generator[k](v), isAwait = (v = x.value) instanceof __await, done = x.done;
+        Promise.resolve(isAwait ? v[0] : v).then((y) => isAwait ? resume(k === "return" ? k : "next", v[1] ? { done: y.done, value: y.value } : y, yes, no) : yes({ value: y, done })).catch((e) => resume("throw", e, yes, no));
+      } catch (e) {
+        no(e);
+      }
+    }, method = (k) => it[k] = (x) => new Promise((yes, no) => resume(k, x, yes, no)), it = {};
+    return generator = generator.apply(__this, __arguments), it[__knownSymbol("asyncIterator")] = () => it, method("next"), method("throw"), method("return"), it;
+  };
+  var __yieldStar = (value) => {
+    var obj = value[__knownSymbol("asyncIterator")], isAwait = false, method, it = {};
+    if (obj == null) {
+      obj = value[__knownSymbol("iterator")]();
+      method = (k) => it[k] = (x) => obj[k](x);
+    } else {
+      obj = obj.call(value);
+      method = (k) => it[k] = (v) => {
+        if (isAwait) {
+          isAwait = false;
+          if (k === "throw") throw v;
+          return v;
+        }
+        isAwait = true;
+        return {
+          done: false,
+          value: new __await(new Promise((resolve) => {
+            var x = obj[k](v);
+            if (!(x instanceof Object)) __typeError("Object expected");
+            resolve(x);
+          }), 1)
+        };
+      };
+    }
+    return it[__knownSymbol("iterator")] = () => it, method("next"), "throw" in obj ? method("throw") : it.throw = (x) => {
+      throw x;
+    }, "return" in obj && method("return"), it;
+  };
+  var __forAwait = (obj, it, method) => (it = obj[__knownSymbol("asyncIterator")]) ? it.call(obj) : (obj = obj[__knownSymbol("iterator")](), it = {}, method = (key, fn) => (fn = obj[key]) && (it[key] = (arg) => new Promise((yes, no, done) => (arg = fn.call(obj, arg), done = arg.done, Promise.resolve(arg.value).then((value) => yes({ value, done }), no)))), method("next"), method("return"), it);
 
   // node_modules/@wxcc-desktop/sdk/dist/index.js
   var require_dist = __commonJS({
@@ -3225,7 +3290,7 @@ const e=new Map,t=new Map,r=(e,t)=>
                 return e3 && !e3.isEmpty();
               }));
             }, t2.toString = function() {
-              return this.isValid ? "[" + this.s.toISO() + " \u2013 " + this.e.toISO() + ")" : dn;
+              return this.isValid ? "[" + this.s.toISO() + " – " + this.e.toISO() + ")" : dn;
             }, t2.toISO = function(e3) {
               return this.isValid ? this.s.toISO(e3) + "/" + this.e.toISO(e3) : dn;
             }, t2.toISODate = function() {
@@ -3233,7 +3298,7 @@ const e=new Map,t=new Map,r=(e,t)=>
             }, t2.toISOTime = function(e3) {
               return this.isValid ? this.s.toISOTime(e3) + "/" + this.e.toISOTime(e3) : dn;
             }, t2.toFormat = function(e3, t3) {
-              var n2 = (void 0 === t3 ? {} : t3).separator, i2 = void 0 === n2 ? " \u2013 " : n2;
+              var n2 = (void 0 === t3 ? {} : t3).separator, i2 = void 0 === n2 ? " – " : n2;
               return this.isValid ? "" + this.s.toFormat(e3) + i2 + this.e.toFormat(e3) : dn;
             }, t2.toDuration = function(e3, t3) {
               return this.isValid ? this.e.diff(this.s, e3, t3) : un.invalid(this.invalidReason);
@@ -3337,7 +3402,7 @@ const e=new Map,t=new Map,r=(e,t)=>
             var h2, f2 = un.fromObject(Object.assign(s2, i2));
             return l2.length > 0 ? (h2 = un.fromMillis(u2, i2)).shiftTo.apply(h2, l2).plus(f2) : f2;
           }
-          var mn = { arab: "[\u0660-\u0669]", arabext: "[\u06F0-\u06F9]", bali: "[\u1B50-\u1B59]", beng: "[\u09E6-\u09EF]", deva: "[\u0966-\u096F]", fullwide: "[\uFF10-\uFF19]", gujr: "[\u0AE6-\u0AEF]", hanidec: "[\u3007|\u4E00|\u4E8C|\u4E09|\u56DB|\u4E94|\u516D|\u4E03|\u516B|\u4E5D]", khmr: "[\u17E0-\u17E9]", knda: "[\u0CE6-\u0CEF]", laoo: "[\u0ED0-\u0ED9]", limb: "[\u1946-\u194F]", mlym: "[\u0D66-\u0D6F]", mong: "[\u1810-\u1819]", mymr: "[\u1040-\u1049]", orya: "[\u0B66-\u0B6F]", tamldec: "[\u0BE6-\u0BEF]", telu: "[\u0C66-\u0C6F]", thai: "[\u0E50-\u0E59]", tibt: "[\u0F20-\u0F29]", latn: "\\d" }, yn = { arab: [1632, 1641], arabext: [1776, 1785], bali: [6992, 7001], beng: [2534, 2543], deva: [2406, 2415], fullwide: [65296, 65303], gujr: [2790, 2799], khmr: [6112, 6121], knda: [3302, 3311], laoo: [3792, 3801], limb: [6470, 6479], mlym: [3430, 3439], mong: [6160, 6169], mymr: [4160, 4169], orya: [2918, 2927], tamldec: [3046, 3055], telu: [3174, 3183], thai: [3664, 3673], tibt: [3872, 3881] }, En = mn.hanidec.replace(/[\[|\]]/g, "").split("");
+          var mn = { arab: "[٠-٩]", arabext: "[۰-۹]", bali: "[᭐-᭙]", beng: "[০-৯]", deva: "[०-९]", fullwide: "[０-９]", gujr: "[૦-૯]", hanidec: "[〇|一|二|三|四|五|六|七|八|九]", khmr: "[០-៩]", knda: "[೦-೯]", laoo: "[໐-໙]", limb: "[᥆-᥏]", mlym: "[൦-൯]", mong: "[᠐-᠙]", mymr: "[၀-၉]", orya: "[୦-୯]", tamldec: "[௦-௯]", telu: "[౦-౯]", thai: "[๐-๙]", tibt: "[༠-༩]", latn: "\\d" }, yn = { arab: [1632, 1641], arabext: [1776, 1785], bali: [6992, 7001], beng: [2534, 2543], deva: [2406, 2415], fullwide: [65296, 65303], gujr: [2790, 2799], khmr: [6112, 6121], knda: [3302, 3311], laoo: [3792, 3801], limb: [6470, 6479], mlym: [3430, 3439], mong: [6160, 6169], mymr: [4160, 4169], orya: [2918, 2927], tamldec: [3046, 3055], telu: [3174, 3183], thai: [3664, 3673], tibt: [3872, 3881] }, En = mn.hanidec.replace(/[\[|\]]/g, "").split("");
           function bn(e2, t2) {
             var n2 = e2.numberingSystem;
             return void 0 === t2 && (t2 = ""), new RegExp("" + mn[n2 || "latn"] + t2);
@@ -5416,7 +5481,7 @@ const e=new Map,t=new Map,r=(e,t)=>
             }
           }, v = n(2), p = { silentJSONParsing: true, forcedJSONParsing: true, clarifyTimeoutError: false }, g = { isBrowser: true, classes: { URLSearchParams: "undefined" != typeof URLSearchParams ? URLSearchParams : l, FormData: "undefined" != typeof FormData ? FormData : null, Blob: "undefined" != typeof Blob ? Blob : null }, protocols: ["http", "https", "file", "blob", "url", "data"] };
           const m = "undefined" != typeof window && "undefined" != typeof document, y = "object" == typeof navigator && navigator || void 0, E = m && (!y || ["ReactNative", "NativeScript", "NS"].indexOf(y.product) < 0), b = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope && "function" == typeof self.importScripts, w = m && window.location.href || "http://localhost";
-          var S = { ...i, ...g };
+          var S = __spreadValues(__spreadValues({}, i), g);
           var k = function(e2) {
             function t2(e3, n2, i2, o2) {
               let s2 = e3[o2++];
@@ -5453,9 +5518,9 @@ const e=new Map,t=new Map,r=(e,t)=>
             let a2;
             if (o2) {
               if (n2.indexOf("application/x-www-form-urlencoded") > -1) return (function(e3, t3) {
-                return Object(s.a)(e3, new S.classes.URLSearchParams(), { visitor: function(e4, t4, n3, i3) {
+                return Object(s.a)(e3, new S.classes.URLSearchParams(), __spreadValues({ visitor: function(e4, t4, n3, i3) {
                   return S.isNode && r.a.isBuffer(e4) ? (this.append(t4, e4.toString("base64")), false) : i3.defaultVisitor.apply(this, arguments);
-                }, ...t3 });
+                } }, t3));
               })(e2, this.formSerializer).toString();
               if ((a2 = r.a.isFileList(e2)) || n2.indexOf("multipart/form-data") > -1) {
                 const t3 = this.env && this.env.FormData;
@@ -5715,7 +5780,7 @@ const e=new Map,t=new Map,r=(e,t)=>
               return t3 ? e3.replace(/\/?\/$/, "") + "/" + t3.replace(/^\/+/, "") : e3;
             })(e2, t2) : t2;
           }
-          const Y = (e2) => e2 instanceof x ? { ...e2 } : e2;
+          const Y = (e2) => e2 instanceof x ? __spreadValues({}, e2) : e2;
           function $(e2, t2) {
             t2 = t2 || {};
             const n2 = {};
@@ -5735,7 +5800,7 @@ const e=new Map,t=new Map,r=(e,t)=>
               return o3 in t2 ? i2(n3, r2) : o3 in e2 ? i2(void 0, n3) : void 0;
             }
             const u2 = { url: s2, method: s2, data: s2, baseURL: a2, transformRequest: a2, transformResponse: a2, paramsSerializer: a2, timeout: a2, timeoutMessage: a2, withCredentials: a2, withXSRFToken: a2, adapter: a2, responseType: a2, xsrfCookieName: a2, xsrfHeaderName: a2, onUploadProgress: a2, onDownloadProgress: a2, decompress: a2, maxContentLength: a2, maxBodyLength: a2, beforeRedirect: a2, transport: a2, httpAgent: a2, httpsAgent: a2, cancelToken: a2, socketPath: a2, responseEncoding: a2, validateStatus: c2, headers: (e3, t3, n3) => o2(Y(e3), Y(t3), 0, true) };
-            return r.a.forEach(Object.keys({ ...e2, ...t2 }), (function(i3) {
+            return r.a.forEach(Object.keys(__spreadValues(__spreadValues({}, e2), t2)), (function(i3) {
               const s3 = u2[i3] || o2, a3 = s3(e2[i3], t2[i3], i3);
               r.a.isUndefined(a3) && s3 !== c2 || (n2[i3] = a3);
             })), n2;
@@ -5829,21 +5894,39 @@ const e=new Map,t=new Map,r=(e,t)=>
             if (!t2 || n2 < t2) return void (yield e2);
             let i2, r2 = 0;
             for (; r2 < n2; ) i2 = r2 + t2, yield e2.slice(r2, i2), r2 = i2;
-          }, te = async function* (e2) {
-            if (e2[Symbol.asyncIterator]) return void (yield* e2);
-            const t2 = e2.getReader();
-            try {
-              for (; ; ) {
-                const { done: e3, value: n2 } = await t2.read();
-                if (e3) break;
-                yield n2;
+          }, te = function(e2) {
+            return __asyncGenerator(this, null, function* () {
+              if (e2[Symbol.asyncIterator]) return void (yield* __yieldStar(e2));
+              const t2 = e2.getReader();
+              try {
+                for (; ; ) {
+                  const { done: e3, value: n2 } = yield new __await(t2.read());
+                  if (e3) break;
+                  yield n2;
+                }
+              } finally {
+                yield new __await(t2.cancel());
               }
-            } finally {
-              await t2.cancel();
-            }
+            });
           }, ne = (e2, t2, n2, i2) => {
-            const r2 = (async function* (e3, t3) {
-              for await (const n3 of te(e3)) yield* ee(n3, t3);
+            const r2 = (function(e3, t3) {
+              return __asyncGenerator(this, null, function* () {
+                try {
+                  for (var iter = __forAwait(te(e3)), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
+                    const n3 = temp.value;
+                    yield* __yieldStar(ee(n3, t3));
+                  }
+                } catch (temp) {
+                  error = [temp];
+                } finally {
+                  try {
+                    more && (temp = iter.return) && (yield new __await(temp.call(iter)));
+                  } finally {
+                    if (error)
+                      throw error[0];
+                  }
+                }
+              });
             })(e2, t2);
             let o2, s2 = 0, a2 = (e3) => {
               o2 || (o2 = true, i2 && i2(e3));
@@ -5917,7 +6000,7 @@ const e=new Map,t=new Map,r=(e,t)=>
                   }
                 }
                 r.a.isString(w2) || (w2 = w2 ? "include" : "omit");
-                const t3 = s2 && "credentials" in n2.prototype, u4 = { ...S2, signal: I2, method: a3.toUpperCase(), headers: b2.normalize().toJSON(), body: c3, duplex: "half", credentials: t3 ? w2 : void 0 };
+                const t3 = s2 && "credentials" in n2.prototype, u4 = __spreadProps(__spreadValues({}, S2), { signal: I2, method: a3.toUpperCase(), headers: b2.normalize().toJSON(), body: c3, duplex: "half", credentials: t3 ? w2 : void 0 });
                 A2 = s2 && new n2(o3, u4);
                 let l4 = await (s2 ? k2(A2, S2) : k2(o3, u4));
                 const v2 = h2 && ("stream" === E2 || "response" === E2);
@@ -8695,15 +8778,4 @@ const e=new Map,t=new Map,r=(e,t)=>
     customElements.define("acp-servicedesk-hidden", AcpServicedeskHidden);
   }
 })();
-/*! Bundled license information:
-
-@wxcc-desktop/sdk/dist/index.js:
-  (*!
-   * The buffer module from node.js, for the browser.
-   *
-   * @author   Feross Aboukhadijeh <http://feross.org>
-   * @license  MIT
-   *)
-  (*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> *)
-*/
 
