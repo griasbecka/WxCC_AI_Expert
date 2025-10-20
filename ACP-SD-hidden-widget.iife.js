@@ -8751,15 +8751,14 @@ const e=new Map,t=new Map,r=(e,t)=>
         const symbol = myFrageTicket === "True" || myFrageTicket === "true" ? "✔" : "❌";
         this.appendDebug("HIDDEN: FrageTicket=" + symbol);
         const interactionId = ((_c = detail == null ? void 0 : detail.data) == null ? void 0 : _c.interactionId) || (detail == null ? void 0 : detail.interactionId) || (detail == null ? void 0 : detail.contactId) || null;
-        this._saveSnapshot({ interactionId, ani: ani || null, myFrageTicket, eventType: evt.type });
         localStorage.setItem("existTicket", symbol);
         localStorage.setItem("myani", myani);
       } catch (e) {
         this.appendDebug("HIDDEN: bridge onEvent error", e);
       }
     }
-    _saveSnapshot({ interactionId, ani: ani2, FrageExistingTicket, eventType }) {
-      const snapshot = { interactionId, ani: ani2, FrageExistingTicket, eventType };
+    _saveSnapshot({ interactionId, ani, FrageExistingTicket, eventType }) {
+      const snapshot = { interactionId, ani, FrageExistingTicket, eventType };
       this.appendDebug("HIDDEN: saving snapshot: " + JSON.stringify(snapshot));
       try {
         localStorage.setItem("wxcc:ani_saver", JSON.stringify(snapshot));
