@@ -8671,11 +8671,7 @@ const e=new Map,t=new Map,r=(e,t)=>
       this._mounted = false;
       this._on = this._on.bind(this);
       this._events = [
-        "eAgentContactConnected",
-        "eAgentContactUpdated",
-        "eAgentOfferContact",
-        "eAgentContactAssigned",
-        "eAgentContactWrapUp"
+        "eAgentOfferContact"
       ];
       this._pollTimer = null;
     }
@@ -8708,10 +8704,6 @@ const e=new Map,t=new Map,r=(e,t)=>
         this.appendDebug("HIDDEN: addListener");
         this._events.forEach((evt) => import_sdk.Desktop.agentContact.addEventListener(evt, this._on));
       }
-      await this._snapshotFromTaskMap();
-      if (!this._pollTimer) {
-        this._pollTimer = setInterval(() => this._snapshotFromTaskMap(), 2e3);
-      }
     }
     appendDebug(msg) {
       const ts = (/* @__PURE__ */ new Date()).toISOString();
@@ -8723,49 +8715,55 @@ const e=new Map,t=new Map,r=(e,t)=>
       if (lines.length > 600) next = lines.slice(-600).join("\n");
       localStorage.setItem(this._debugKey, next);
     }
-    async _snapshotFromTaskMap() {
-      var _a;
-      if (!this._mounted) return;
-      try {
-        this.appendDebug("HIDDEN: getting TaskMap");
-        const tm = await import_sdk.Desktop.actions.getTaskMap();
-        if (!tm || !Object.keys(tm).length) return;
-        const tasks = Object.values(tm);
-        const t = tasks.find((x) => (x == null ? void 0 : x.mediaType) === "telephony" || (x == null ? void 0 : x.channelType) === "telephony") || tasks[0];
-        if (!t) return;
-        const cad = ((_a = t == null ? void 0 : t.interaction) == null ? void 0 : _a.callAssociatedData) || (t == null ? void 0 : t.callAssociatedData) || (t == null ? void 0 : t.cad) || {};
-        const ani = this._extractAniLike(cad) || this._extractAniLike(t);
-        if (!ani) return;
-        const interactionId = (t == null ? void 0 : t.interactionId) || (t == null ? void 0 : t.id) || (t == null ? void 0 : t.contactId) || null;
-        this._saveSnapshot({ interactionId, ani, eventType: "poll:taskMap" });
-      } catch (e) {
+    /*
+      async _snapshotFromTaskMap()
+      {
+        if (!this._mounted) return;
+        try {
+    		this.appendDebug('HIDDEN: getting TaskMap');
+          const tm = await Desktop.actions.getTaskMap();
+          if (!tm || !Object.keys(tm).length) return;
+    
+          const tasks = Object.values(tm);
+          const t = tasks.find(x => x?.mediaType === 'telephony' || x?.channelType === 'telephony') || tasks[0];
+          if (!t) return;
+    
+          const cad = t?.interaction?.callAssociatedData || t?.callAssociatedData || t?.cad || {};
+          const ani = this._extractAniLike(cad) || this._extractAniLike(t);
+          if (!ani) return;
+    
+          const interactionId = t?.interactionId || t?.id || t?.contactId || null;
+          this._saveSnapshot({ interactionId, ani, eventType: 'poll:taskMap' });
+        } catch (e) {
+          // still leise sein – Poll läuft weiter
+        }
       }
-    }
+      */
     _on(evt) {
       var _a, _b, _c;
       try {
         this.appendDebug("HIDDEN: Evt fired");
         const detail = (evt == null ? void 0 : evt.data) || {};
         const cad = ((_a = detail == null ? void 0 : detail.data) == null ? void 0 : _a.callAssociatedData) || (detail == null ? void 0 : detail.callAssociatedData) || ((_b = detail == null ? void 0 : detail.interaction) == null ? void 0 : _b.callAssociatedData) || (detail == null ? void 0 : detail.cad) || {};
-        const ani = this._extractAniLike(cad);
-        this.appendDebug("HIDDEN: Evt ani=" + ani);
-        this.appendDebug("HIDDEN: Evt ani manual=" + detail.interaction.callAssociatedDetails.ani);
+        const myani = detail.interaction.callAssociatedDetails.ani;
+        const myFrageTicket = detail.interaction.callAssociatedData.FrageBestehendesTicket.value;
+        this.appendDebug("HIDDEN: Evt ani=" + myani);
+        const symbol = myFrageTicket === "True" || myFrageTicket === "true" ? "✔" : "❌";
+        this.appendDebug("HIDDEN: FrageTicket=" + symbol);
         const interactionId = ((_c = detail == null ? void 0 : detail.data) == null ? void 0 : _c.interactionId) || (detail == null ? void 0 : detail.interactionId) || (detail == null ? void 0 : detail.contactId) || null;
-        this._saveSnapshot({ interactionId, ani: ani || null, eventType: evt.type });
+        this._saveSnapshot({ interactionId, ani: ani || null, myFrageTicket, eventType: evt.type });
+        localStorage.setItem("existTicket", symbol);
+        localStorage.setItem("myani", myani);
       } catch (e) {
         this.appendDebug("HIDDEN: bridge onEvent error", e);
       }
     }
-    _saveSnapshot({ interactionId, ani, eventType }) {
-      const snapshot = { interactionId, ani, eventType, ts: Date.now() };
+    _saveSnapshot({ interactionId, ani: ani2, FrageExistingTicket, eventType }) {
+      const snapshot = { interactionId, ani: ani2, FrageExistingTicket, eventType };
       this.appendDebug("HIDDEN: saving snapshot: " + JSON.stringify(snapshot));
-      const prev = window.__WXCC_LAST;
-      if (!prev || prev.ani !== ani || prev.interactionId !== interactionId || prev.eventType !== eventType) {
-        window.__WXCC_LAST = snapshot;
-        try {
-          localStorage.setItem("wxcc:ani_saver", JSON.stringify(snapshot));
-        } catch (e) {
-        }
+      try {
+        localStorage.setItem("wxcc:ani_saver", JSON.stringify(snapshot));
+      } catch (e) {
       }
     }
     _extractAniLike(obj) {
