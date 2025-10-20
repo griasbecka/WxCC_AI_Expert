@@ -8698,14 +8698,14 @@ const e=new Map,t=new Map,r=(e,t)=>
       }
     }
     async _init() {
-      console.warn("HIDDEN: init Desktop");
+      appendDebug("HIDDEN: init Desktop");
       await import_sdk.Desktop.config.init({
         widgetName: "acp-servicedesk-hidden",
         widgetProvider: "Custom"
         // oder ein für euch passender Providername
       });
       if (import_sdk.Desktop.agentContact && typeof import_sdk.Desktop.agentContact.addEventListener === "function") {
-        console.warn("HIDDEN: addListener");
+        appendDebug("HIDDEN: addListener");
         this._events.forEach((evt) => import_sdk.Desktop.agentContact.addEventListener(evt, this._on));
       }
       await this._snapshotFromTaskMap();
