@@ -8681,7 +8681,7 @@ const e=new Map,t=new Map,r=(e,t)=>
     }
     connectedCallback() {
       this._mounted = true;
-      this._init().catch((err) => appendDebug("HIDDEN: bridge init error", err));
+      this._init().catch((err) => this.appendDebug("HIDDEN: bridge init error", err));
     }
     disconnectedCallback() {
       this._mounted = false;
@@ -8698,14 +8698,14 @@ const e=new Map,t=new Map,r=(e,t)=>
       }
     }
     async _init() {
-      appendDebug("HIDDEN: init Desktop");
+      this.appendDebug("HIDDEN: init Desktop");
       await import_sdk.Desktop.config.init({
         widgetName: "acp-servicedesk-hidden",
         widgetProvider: "Custom"
         // oder ein für euch passender Providername
       });
       if (import_sdk.Desktop.agentContact && typeof import_sdk.Desktop.agentContact.addEventListener === "function") {
-        appendDebug("HIDDEN: addListener");
+        this.appendDebug("HIDDEN: addListener");
         this._events.forEach((evt) => import_sdk.Desktop.agentContact.addEventListener(evt, this._on));
       }
       await this._snapshotFromTaskMap();
@@ -8727,7 +8727,7 @@ const e=new Map,t=new Map,r=(e,t)=>
       var _a;
       if (!this._mounted) return;
       try {
-        appendDebug("HIDDEN: getting TaskMap");
+        this.appendDebug("HIDDEN: getting TaskMap");
         const tm = await import_sdk.Desktop.actions.getTaskMap();
         if (!tm || !Object.keys(tm).length) return;
         const tasks = Object.values(tm);
@@ -8744,21 +8744,21 @@ const e=new Map,t=new Map,r=(e,t)=>
     _on(evt) {
       var _a, _b, _c;
       try {
-        appendDebug("HIDDEN: Evt fired");
+        this.appendDebug("HIDDEN: Evt fired");
         const detail = (evt == null ? void 0 : evt.data) || {};
         const cad = ((_a = detail == null ? void 0 : detail.data) == null ? void 0 : _a.callAssociatedData) || (detail == null ? void 0 : detail.callAssociatedData) || ((_b = detail == null ? void 0 : detail.interaction) == null ? void 0 : _b.callAssociatedData) || (detail == null ? void 0 : detail.cad) || {};
         const ani = this._extractAniLike(cad);
-        appendDebug("HIDDEN: Evt ani=" + ani);
-        appendDebug("HIDDEN: Evt ani manual=" + detail.interaction.callAssociatedDetails.ani);
+        this.appendDebug("HIDDEN: Evt ani=" + ani);
+        this.appendDebug("HIDDEN: Evt ani manual=" + detail.interaction.callAssociatedDetails.ani);
         const interactionId = ((_c = detail == null ? void 0 : detail.data) == null ? void 0 : _c.interactionId) || (detail == null ? void 0 : detail.interactionId) || (detail == null ? void 0 : detail.contactId) || null;
         this._saveSnapshot({ interactionId, ani: ani || null, eventType: evt.type });
       } catch (e) {
-        appendDebug("HIDDEN: bridge onEvent error", e);
+        this.appendDebug("HIDDEN: bridge onEvent error", e);
       }
     }
     _saveSnapshot({ interactionId, ani, eventType }) {
-      appendDebug("HIDDEN: saving snapshot: " + ani);
       const snapshot = { interactionId, ani, eventType, ts: Date.now() };
+      this.appendDebug("HIDDEN: saving snapshot: " + JSON.stringify(snapshot));
       const prev = window.__WXCC_LAST;
       if (!prev || prev.ani !== ani || prev.interactionId !== interactionId || prev.eventType !== eventType) {
         window.__WXCC_LAST = snapshot;
