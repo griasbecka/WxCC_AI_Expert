@@ -45,6 +45,7 @@
     isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
     mod
   ));
+  var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   var __await = function(promise, isYieldStar) {
     this[0] = promise;
     this[1] = isYieldStar;
@@ -8666,6 +8667,7 @@ const e=new Map,t=new Map,r=(e,t)=>
   var AcpServicedeskHidden = class extends HTMLElement {
     constructor() {
       super();
+      __publicField(this, "_debugKey", "wxcc:slomis:debug");
       this._mounted = false;
       this._on = this._on.bind(this);
       this._events = [
@@ -8679,7 +8681,7 @@ const e=new Map,t=new Map,r=(e,t)=>
     }
     connectedCallback() {
       this._mounted = true;
-      this._init().catch((err) => console.warn("bridge init error", err));
+      this._init().catch((err) => appendDebug("HIDDEN: bridge init error", err));
     }
     disconnectedCallback() {
       this._mounted = false;
@@ -8711,11 +8713,21 @@ const e=new Map,t=new Map,r=(e,t)=>
         this._pollTimer = setInterval(() => this._snapshotFromTaskMap(), 2e3);
       }
     }
+    appendDebug(msg) {
+      const ts = (/* @__PURE__ */ new Date()).toISOString();
+      const time = new Date(ts).toLocaleTimeString("de-DE", { hour12: false });
+      const add = `[${time}] ${String(msg != null ? msg : "")}
+`;
+      let next = add + (localStorage.getItem(this._debugKey) || "");
+      const lines = next.split("\n");
+      if (lines.length > 600) next = lines.slice(-600).join("\n");
+      localStorage.setItem(this._debugKey, next);
+    }
     async _snapshotFromTaskMap() {
       var _a;
       if (!this._mounted) return;
       try {
-        console.warn("HIDDEN: getting TaskMap");
+        appendDebug("HIDDEN: getting TaskMap");
         const tm = await import_sdk.Desktop.actions.getTaskMap();
         if (!tm || !Object.keys(tm).length) return;
         const tasks = Object.values(tm);
@@ -8732,20 +8744,20 @@ const e=new Map,t=new Map,r=(e,t)=>
     _on(evt) {
       var _a, _b, _c;
       try {
-        console.warn("HIDDEN: Evt fired");
+        appendDebug("HIDDEN: Evt fired");
         const detail = (evt == null ? void 0 : evt.data) || {};
         const cad = ((_a = detail == null ? void 0 : detail.data) == null ? void 0 : _a.callAssociatedData) || (detail == null ? void 0 : detail.callAssociatedData) || ((_b = detail == null ? void 0 : detail.interaction) == null ? void 0 : _b.callAssociatedData) || (detail == null ? void 0 : detail.cad) || {};
         const ani = this._extractAniLike(cad);
-        console.warn("HIDDEN: Evt ani=" + ani);
-        console.warn("HIDDEN: Evt ani manual=" + detail.interaction.callAssociatedDetails.ani);
+        appendDebug("HIDDEN: Evt ani=" + ani);
+        appendDebug("HIDDEN: Evt ani manual=" + detail.interaction.callAssociatedDetails.ani);
         const interactionId = ((_c = detail == null ? void 0 : detail.data) == null ? void 0 : _c.interactionId) || (detail == null ? void 0 : detail.interactionId) || (detail == null ? void 0 : detail.contactId) || null;
         this._saveSnapshot({ interactionId, ani: ani || null, eventType: evt.type });
       } catch (e) {
-        console.warn("bridge onEvent error", e);
+        appendDebug("HIDDEN: bridge onEvent error", e);
       }
     }
     _saveSnapshot({ interactionId, ani, eventType }) {
-      console.warn("HIDDEN: saving snapshot: " + ani);
+      appendDebug("HIDDEN: saving snapshot: " + ani);
       const snapshot = { interactionId, ani, eventType, ts: Date.now() };
       const prev = window.__WXCC_LAST;
       if (!prev || prev.ani !== ani || prev.interactionId !== interactionId || prev.eventType !== eventType) {
