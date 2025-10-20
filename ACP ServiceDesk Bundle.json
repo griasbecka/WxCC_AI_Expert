@@ -1299,7 +1299,7 @@
 				"comp": "my-company-dashboard",
 				"script": "https://griasbecka.github.io/WxCC_AI_Expert/my-company-dashboard.iife.js?v=20251009",
 				"width": 12,
-				"height": 28,
+				"height": 24,
 				
 				"properties": {
 				  "agentName": "$STORE.agent.agentName",
