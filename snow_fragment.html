@@ -175,6 +175,72 @@
     </div>
   </div>
   <div id="content"></div>
+  
+  
+    <!-- Modal (startet unsichtbar) -->
+	<div class="modal" id="magicModal" aria-hidden="true">
+	  <div class="modal__backdrop" data-close></div>
+	  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="magicTitle">
+		<div class="modal__header">
+		  <h3 id="magicTitle">Magic-Aktion</h3>
+		  <button class="modal__close" type="button" title="Schließen" data-close>×</button>
+		</div>
+
+		<form id="magicForm" class="modal__body">
+		  <!-- Mehrere Eingabefelder -->
+		  <label>Feld A
+			<input type="text" name="feldA" placeholder="Text eingeben">
+		  </label>
+
+		  <label>Feld B
+			<input type="text" name="feldB" placeholder="Text eingeben">
+		  </label>
+
+		  <label>Feld C
+			<input type="text" name="feldC" placeholder="Text eingeben">
+		  </label>
+
+		  <!-- 3 Dropdowns -->
+		  <label>Auswahl 1
+			<select name="dd1">
+			  <option value="">Bitte wählen…</option>
+			  <option>Option 1</option>
+			  <option>Option 2</option>
+			</select>
+		  </label>
+
+		  <label>Auswahl 2
+			<select name="dd2">
+			  <option value="">Bitte wählen…</option>
+			  <option>A</option>
+			  <option>B</option>
+			</select>
+		  </label>
+
+		  <label>Auswahl 3
+			<select name="dd3">
+			  <option value="">Bitte wählen…</option>
+			  <option>X</option>
+			  <option>Y</option>
+			</select>
+		  </label>
+
+		  <!-- 2 Checkboxen -->
+		  <label class="chk">
+			<input type="checkbox" name="cb1"> Option aktivieren
+		  </label>
+		  <label class="chk">
+			<input type="checkbox" name="cb2"> Benachrichtigung senden
+		  </label>
+
+		  <!-- Actions -->
+		  <div class="modal__actions">
+			<button type="button" data-close>Abbrechen</button>
+			<button type="submit" class="primary">Abschicken</button>
+		  </div>
+		</form>
+	  </div>
+	</div>
 </body>
 
 
