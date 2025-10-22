@@ -156,49 +156,12 @@ label {
   width: 87%;
 }
 
-/* Wrapper: Tabelle + Buttons nebeneinander */
-.ticket-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 0px;          /* Abstand zwischen Tabelle und Buttons */
-  min-height: 280;
-}
-
-/* Rechte Spalte: Buttons untereinander */
-.actions-right {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex-shrink: 0;     /* verhindert, dass die Buttons die Tabelle zusammendrücken */
-  width: 1px;       /* feste Spaltenbreite, passe bei Bedarf an */
-  align-self: start;  /* oben ausrichten */
-  position: sticky;   /* bleibt beim Scrollen sichtbar */
-  top: 0;
-}
-
-/* Buttons über die gesamte Spaltenbreite */
-.actions-right button {
-  width: 100%;
-}
-
-
-
-
-
-
-
 .table-scroll{
   /* Variante A: fixe Maxhöhe (~5 Zeilen + Header). Passt bei üblichen Row-Höhen. */
-  /* bisher, hat gut ausgesehen 
   max-height: 280px;               
   overflow-y: auto;
   border: 0px solid #e5e7eb;
   border-radius: 8px;
-  */
-  flex: 1 1 auto;     /* füllt die ganze Breite */
-  min-height: 0;
-  overflow-y: auto;
-  max-height: none;   /* falls du Höhe dynamisch willst */
 }
 
 .ticket-table {
