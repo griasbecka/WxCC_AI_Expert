@@ -14,10 +14,11 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
   height: 750px;
-  /*display: flex;
+  
+  display: flex;
   flex-direction: column;
   min-height: 0;
-  */
+  
 }
 
 .header {
@@ -40,12 +41,12 @@ body {
 
 .sub-section {
   margin-top: 20px;
-  /*
+  
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
-  */
+  
 }
 
 .sub-section h2 {
@@ -54,11 +55,20 @@ body {
 }
 
 .footer {
+  /*
   flex: 0 0 auto;
   position: sticky;
   bottom: 0;
   
   margin-top: 20px;
+  */
+  /* Footer immer am unteren Rand des Containers */
+  margin-top: auto;        /* NEU: schiebt Footer ans Container-Ende */
+  flex: 0 0 auto;
+  /* optional Kosmetik:*/
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+  background: #fff;
 }
 
 h1 {
@@ -162,6 +172,9 @@ label {
   overflow-y: auto;
   border: 0px solid #e5e7eb;
   border-radius: 8px;
+  
+  min-height: 0;
+  flex: 1 1 auto;
 }
 
 .ticket-table {
