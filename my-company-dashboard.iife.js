@@ -50,7 +50,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		  padding:6px;
 		  border:1px solid #e5e7eb;
 		  border-radius:8px;
-		  background:#e3f1fa;
+		  background:#f0f5f7;
 		  font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;
 		  line-height:1.3;
 		  overflow:auto;
@@ -67,7 +67,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			resize: vertical;   /* Benutzer darf vergr\xF6\xDFern */
 			padding:.75rem .9rem;
 			border:1px solid #e5e7eb; border-radius:10px;
-			background:#e3f1fa; color:#111827;
+			background:#f0f5f7; color:#111827;
 			box-sizing:border-box;
 		  }
 		  .section-title,
@@ -89,8 +89,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		  .two-cols-flex {
 				display: flex;
 				gap: 1rem;
-				background-color: #d3e6f2;
-				border-radius:4px;
+				background-color: #edf7fc;
+				border-radius:8px;
 			}
 			.two-cols-flex .left  { flex: 1 1 40%; padding: 5px; border-radius: 5px;}
 			.two-cols-flex .right { flex: 1 1 60%; padding: 5px; border-radius: 5px;}
