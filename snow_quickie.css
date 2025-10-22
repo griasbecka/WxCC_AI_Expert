@@ -170,7 +170,7 @@ label {
   flex-direction: column;
   gap: 8px;
   flex-shrink: 0;     /* verhindert, dass die Buttons die Tabelle zusammendrücken */
-  width: 5px;       /* feste Spaltenbreite, passe bei Bedarf an */
+  width: 1px;       /* feste Spaltenbreite, passe bei Bedarf an */
   align-self: start;  /* oben ausrichten */
   position: sticky;   /* bleibt beim Scrollen sichtbar */
   top: 0;
