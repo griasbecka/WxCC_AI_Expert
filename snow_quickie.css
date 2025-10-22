@@ -51,6 +51,8 @@ body {
 
 .footer {
   flex: 0 0 auto;
+  position: sticky;
+  botton: 0;
 }
 
 h1 {
