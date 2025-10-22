@@ -74,7 +74,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			.notes__label {
 			  display: block;
 			  margin-bottom: .5rem;
-			  color: #374151;
+			  color: #f0f4fa;
 			  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 			  font-weight: bold; 
 			  font-size: 18px;
@@ -89,7 +89,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		  .two-cols-flex {
 				display: flex;
 				gap: 1rem;
-				background-color: #f0f4fa;
+				background-color: #3D4A52;
 			}
 			.two-cols-flex .left  { flex: 1 1 40%; padding: 5px; border-radius: 5px;}
 			.two-cols-flex .right { flex: 1 1 60%; padding: 5px; border-radius: 5px;}
