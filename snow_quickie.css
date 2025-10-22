@@ -66,8 +66,7 @@ body {
   margin-top: auto;        /* NEU: schiebt Footer ans Container-Ende */
   flex: 0 0 auto;
   /* optional Kosmetik:*/
-  border-top: 1px solid #eee;
-  padding-top: 8px;
+  padding-top: 2px;
   background: #fff;
 }
 
