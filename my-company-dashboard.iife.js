@@ -104,7 +104,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       <div class="card">
 
         <div id="erpFragment"></div>
-		<br><hr>			
+		<br>
 		<div class="two-cols-flex">
 		  <div class="left">
 			<div class="section-title">MyDebug</div>
