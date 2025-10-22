@@ -12,10 +12,12 @@ body {
   padding: 5px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /*
   height: auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  */
 }
 
 .header {
@@ -33,15 +35,17 @@ body {
 }
 
 .upper-section {
-  flex: 0 0 auto;
+  /*flex: 0 0 auto;*/
 }
 
 .sub-section {
   margin-top: 20px;
+  /*
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  */
 }
 
 .sub-section h2 {
@@ -50,10 +54,11 @@ body {
 }
 
 .footer {
-  flex: 0 0 auto;
+  /*flex: 0 0 auto;
   position: sticky;
   bottom: 0;
   margin-top: 20px;
+  */
 }
 
 h1 {
