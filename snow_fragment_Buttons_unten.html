@@ -75,35 +75,25 @@
 	<hr>
     <div class="sub-section">
       <h2 style="display: flex; gap: 8px; align-items: center;">Offene Tickets:&nbsp;<span id="ticketCount"></span></h2>
-	  <div class="ticket-row">
-		  <div class="table-scroll">
-			  <table class="ticket-table" id="openTickets" border=0>
-				<thead>
-				  <tr>
-					<th width=150 data-type="text">TicketNr</th>
-					<th width=200 data-type="text">Status</th>
-					<th width=500 data-type="text">Topic</th>
-					<th width=300 data-type="text" style="text-align:left">Assignment Group</th>
-					<th width=400 data-type="text" style="text-align:right">Assigned to&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-					<th class="icon" data-sortable="false"></th>
-					<th class="icon" data-sortable="false"></th>
-					<th width=220 data-type="date" style="text-align:center">Eröffnet / Updated</th>
-					<th width=140 data-type="text" style="text-align:center">Needs Attention</th>
-				  </tr>
-				</thead>
-				<tbody>
-				
-				</tbody>
-			  </table>
-			</div>
+	  <div class="table-scroll">
+		  <table class="ticket-table" id="openTickets" border=0>
+			<thead>
+			  <tr>
+				<th width=150 data-type="text">TicketNr</th>
+				<th width=200 data-type="text">Status</th>
+				<th width=500 data-type="text">Topic</th>
+				<th width=300 data-type="text" style="text-align:left">Assignment Group</th>
+				<th width=400 data-type="text" style="text-align:right">Assigned to&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+				<th class="icon" data-sortable="false"></th>
+				<th class="icon" data-sortable="false"></th>
+				<th width=220 data-type="date" style="text-align:center">Eröffnet / Updated</th>
+				<th width=140 data-type="text" style="text-align:center">Needs Attention</th>
+			  </tr>
+			</thead>
+			<tbody>
 			
-			<!-- Buttons rechts daneben -->
-			<aside class="actions-right">
-			  <button type="button" id="create_inc"  name="create_inc">+ Incident</button>
-			  <button type="button" id="create_chg"  name="create_chg">+ Change</button>
-			  <button type="button" id="doMagic"     name="doMagic">*do magic*</button>
-			  <button type="button" id="cleardebug"  name="cleardebug">ClearDbg + ERPcache</button>
-			</aside>
+			</tbody>
+		  </table>
 		</div>
     </div>	
     <div class="footer">
