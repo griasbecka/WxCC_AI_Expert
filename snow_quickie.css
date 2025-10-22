@@ -160,8 +160,8 @@ label {
 .ticket-row {
   display: flex;
   align-items: flex-start;
-  gap: 12px;          /* Abstand zwischen Tabelle und Buttons */
-  min-height: 0;
+  gap: 0px;          /* Abstand zwischen Tabelle und Buttons */
+  min-height: 280;
 }
 
 /* Rechte Spalte: Buttons untereinander */
@@ -170,7 +170,7 @@ label {
   flex-direction: column;
   gap: 8px;
   flex-shrink: 0;     /* verhindert, dass die Buttons die Tabelle zusammendrücken */
-  width: 180px;       /* feste Spaltenbreite, passe bei Bedarf an */
+  width: 5px;       /* feste Spaltenbreite, passe bei Bedarf an */
   align-self: start;  /* oben ausrichten */
   position: sticky;   /* bleibt beim Scrollen sichtbar */
   top: 0;
