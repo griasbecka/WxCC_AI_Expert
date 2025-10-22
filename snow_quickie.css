@@ -13,7 +13,7 @@ body {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
-  height: 1000px;
+  height: 800px;
   /*display: flex;
   flex-direction: column;
   min-height: 0;
@@ -158,14 +158,14 @@ label {
 
 .table-scroll{
   /* Variante A: fixe Maxhöhe (~5 Zeilen + Header). Passt bei üblichen Row-Höhen. */
-  max-height: 280px;               
+  max-height: 400px;               
   overflow-y: auto;
   border: 0px solid #e5e7eb;
   border-radius: 8px;
 }
 
 .ticket-table {
-  width: 93%;
+  width: 94%;
   border-collapse: collapse;/*separate;*/
   margin-left: 40px;
 }
