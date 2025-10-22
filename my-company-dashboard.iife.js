@@ -89,7 +89,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		  .two-cols-flex {
 				display: flex;
 				gap: 1rem;
-				background-color: #f2f2f2;
+				background-color: #f0f4fa;
 			}
 			.two-cols-flex .left  { flex: 1 1 40%; padding: 5px; border-radius: 5px;}
 			.two-cols-flex .right { flex: 1 1 60%; padding: 5px; border-radius: 5px;}
