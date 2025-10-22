@@ -12,13 +12,17 @@ body {
   padding: 5px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /*height: 100vh;*/
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .header {
   text-align: center;
   margin-bottom: 8px;
   padding: 2px;
+  flex: 0 0 auto;
 }
 
 .myhead {
@@ -26,6 +30,25 @@ body {
   background: #3D4A52;
   color: #fff;
   border-radius: 4px;
+}
+
+.upper-section {
+  flex: 0 0 auto;
+}
+
+.sub-section {
+  margin-top: 20px;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.sub-section h2 {
+  /*color: #3D4A52;*/
+  margin-bottom: 10px;
+}
+
+.footer {
+  flex: 0 0 auto;
 }
 
 h1 {
@@ -121,15 +144,6 @@ label {
   color: #b00e2c;
   font-weight: bold;
   width: 87%;
-}
-
-.sub-section {
-  margin-top: 20px;
-}
-
-.sub-section h2 {
-  /*color: #3D4A52;*/
-  margin-bottom: 10px;
 }
 
 .table-scroll{
