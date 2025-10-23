@@ -71,10 +71,12 @@ body {
 }
 
 a {
-	/*color: #2a6f97;*/
-	font-weight: 600;
-	color: #1e4f73;
-	transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	color: #2a6f97;
+	
+	text-decoration: underline;
+	text-decoration-color: rgba(30,79,115,0.4); /* blasser Unterstrich */
+	text-underline-offset: 2px;
+	transition: text-decoration-color 0.15s ease-in-out;
 }
 /*
 a:hover {
@@ -85,9 +87,9 @@ a:hover {
   text-shadow: 0.03em 0 0 currentColor, -0.03em 0 0 currentColor;
 }*/
 a:hover {
-  background-color: rgba(30,79,115,0.08);
-  color: #0b395e;
-  border-radius: 4px;
+	color: #1a4d6b;
+	text-decoration-color: #1e4f73; /* kräftiger Unterstrich beim Hover */
+	text-underline-offset: 4px; /* leicht nach unten rutschen */
 }
 
 h1 {
