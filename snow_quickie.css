@@ -73,7 +73,7 @@ body {
 a {
 	color: #2a6f97;	
 }
-a.hover {
+a:hover {
 	font-weight: bold;
 }
 
