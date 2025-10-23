@@ -73,8 +73,13 @@ body {
 a {
 	color: #2a6f97;	
 }
+/*
 a:hover {
 	font-weight: bold;
+}
+*/
+a:hover {
+  text-shadow: 0.03em 0 0 currentColor, -0.03em 0 0 currentColor;
 }
 
 h1 {
