@@ -71,7 +71,10 @@ body {
 }
 
 a {
-	color: #2a6f97;
+	color: #2a6f97;	
+}
+a.hover {
+	font-weight: bold;
 }
 
 h1 {
