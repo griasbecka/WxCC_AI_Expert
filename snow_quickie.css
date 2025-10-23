@@ -71,15 +71,23 @@ body {
 }
 
 a {
-	color: #2a6f97;	
+	/*color: #2a6f97;*/
+	font-weight: 600;
+	color: #1e4f73;
+	transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 /*
 a:hover {
 	font-weight: bold;
 }
-*/
+
 a:hover {
   text-shadow: 0.03em 0 0 currentColor, -0.03em 0 0 currentColor;
+}*/
+a:hover {
+  background-color: rgba(30,79,115,0.08);
+  color: #0b395e;
+  border-radius: 4px;
 }
 
 h1 {
