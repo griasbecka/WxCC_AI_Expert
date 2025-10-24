@@ -78,6 +78,16 @@ h2 {
   border-radius: 4px;
 }
 
+h3 {
+  color: #ddd;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #83c22b;/*AAC936;*/
+  padding: 3px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+
 .form-group {
   margin-bottom: 2px;
 }
