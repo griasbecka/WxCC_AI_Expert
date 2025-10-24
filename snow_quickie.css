@@ -62,22 +62,6 @@ body {
   background: #fff;
 }
 
-a {
-	color: #2893d1;/*2a6f97;*/
-	display: inline-block;       /* sonst wird Padding ignoriert */
-	font-weight: 550;
-	text-decoration: none;
-	transition: color 0.1s ease-in-out, font-weight 0.05s linear;
-}
-a:hover {
-	color: #1a4d6b;
-	font-weight: bold;            /* Hover-Bold */
-	text-decoration: underline;   /* optional */
-	text-decoration-thickness: 3px;
-	text-underline-offset: 2px;
-	text-decoration-color: #83c22b;
-}
-
 h1 {
   color: #fff;
   font-size: 22px;
@@ -182,6 +166,23 @@ label {
   
   min-height: 0;
   flex: 1 1 auto;
+}
+
+a {
+	color: #2893d1;/*2a6f97;*/
+	display: inline-block;       /* sonst wird Padding ignoriert */
+	font-weight: 550;
+	text-decoration: none;
+	transition: color 0.1s ease-in-out, font-weight 0.05s linear;
+	padding-left: 12px;
+}
+a:hover {
+	color: #1a4d6b;
+	font-weight: bold;            /* Hover-Bold */
+	text-decoration: underline;   /* optional */
+	text-decoration-thickness: 3px;
+	text-underline-offset: 2px;
+	text-decoration-color: #83c22b;
 }
 
 .ticket-table {
