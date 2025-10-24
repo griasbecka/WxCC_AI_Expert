@@ -201,7 +201,7 @@ a:hover {
   border-collapse: collapse;
   margin-left: 16px;
   border: 1px solid #ddd;
-  table-layout: fixed;
+  /*table-layout: fixed;*/
 }
 
 .ticket-table thead th:first-child { border-top-left-radius: 4px;border-bottom-left-radius: 4px; }
