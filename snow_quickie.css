@@ -174,8 +174,8 @@ a {
 	font-weight: 550;
 	text-decoration: none;
 	transition: color 0.1s ease-in-out, font-weight 0.05s linear;
-	padding-left: 12px;
-	padding-right: 12px;
+	/*padding-left: 12px;*/
+	/*padding-right: 12px;*/
 }
 a:hover {
 	color: #83c22b;/*1a4d6b;*/
