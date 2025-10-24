@@ -50,7 +50,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		  padding:6px;
 		  border:0px solid #e5e7eb;
 		  border-radius:8px;
-		  background:#e8f3fa;
+		  background:#B5D0F2;/*e8f3fa;*/
 		  font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;
 		  line-height:1.3;
 		  overflow:auto;
