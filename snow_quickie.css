@@ -178,7 +178,7 @@ a {
 	padding-right: 12px;
 }
 a:hover {
-	color: #1a4d6b;
+	color: #83c22b;/*1a4d6b;*/
 	font-weight: bold;            /* Hover-Bold */
 	text-decoration: underline;   /* optional */
 	text-decoration-thickness: 3px;
