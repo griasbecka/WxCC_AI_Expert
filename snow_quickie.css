@@ -65,18 +65,10 @@ body {
 a {
 	color: #2a6f97;
 	
-	font-weight: normal;          
+	font-weight: 600;          
 	text-decoration: none;
 	transition: color 0.1s ease-in-out, font-weight 0.05s linear;
 }
-/*
-a:hover {
-	font-weight: bold;
-}
-
-a:hover {
-  text-shadow: 0.03em 0 0 currentColor, -0.03em 0 0 currentColor;
-}*/
 a:hover {
 	color: #1a4d6b;
 	font-weight: bold;            /* Hover-Bold */
