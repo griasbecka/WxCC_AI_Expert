@@ -206,6 +206,10 @@ a:hover {
   background-color: #2a6f97;/*849fb0*/
   color: #fff;
   vertical-align: middle;
+  
+  white-space: nowrap;          /* kein Zeilenumbruch */
+  overflow: hidden;
+  text-overflow: ellipsis;      /* ggf. ... bei langen Inhalten */
 }
 .ticket-table thead th{
   /*position: sticky;*/
