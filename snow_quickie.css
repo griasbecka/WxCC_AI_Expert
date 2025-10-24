@@ -179,9 +179,9 @@ a {
 }
 a:hover {
 	color: #83c22b;/*1a4d6b;*/
-	font-weight: bold;            /* Hover-Bold */
+	/*font-weight: bold;            /* Hover-Bold */
 	text-decoration: underline;   /* optional */
-	text-decoration-thickness: 3px;
+	text-decoration-thickness: 2px;
 	text-underline-offset: 2px;
 	text-decoration-color: #83c22b;
 }
