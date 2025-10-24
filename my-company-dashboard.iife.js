@@ -50,7 +50,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		  padding:6px;
 		  border:0px solid #e5e7eb;
 		  border-radius:8px;
-		  background:#F3F6FD;/*e8f3fa;*/
+		  background:#DEEDFD;/*e8f3fa;*/
 		  font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;
 		  line-height:1.3;
 		  overflow:auto;
@@ -89,7 +89,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		  .two-cols-flex {
 				display: flex;
 				gap: 1rem;
-				background-color: #F3F6FD;/*e8f3fa; B5D0F2*/
+				background-color: #DEEDFD;/*e8f3fa; B5D0F2*/
 				border-radius:8px;
 			}
 			.two-cols-flex .left  { flex: 1 1 40%; padding: 5px; border-radius: 5px;}
