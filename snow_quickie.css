@@ -183,9 +183,9 @@ label {
 }
 
 .ticket-table {
-  width: 94%;
+  width: 100%;
   border-collapse: collapse;
-  margin-left: 40px;
+  margin-left: 0px;
   border: 1px solid #ddd;
   table-layout: /*fixed;          /* verhindert Breitenänderung */
 }
