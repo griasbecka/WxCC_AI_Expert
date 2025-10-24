@@ -173,6 +173,7 @@ label {
   overflow-y: auto;
   border: 0px solid #e5e7eb;
   border-radius: 8px;
+  padding-left: 16px;
   
   min-height: 0;
   flex: 1 1 auto;
@@ -197,9 +198,9 @@ a:hover {
 }
 
 .ticket-table {
-  width: 96%;
+  width: 100%;
   border-collapse: collapse;
-  margin-left: 16px;
+  /*margin-left: 16px;*/
   border: 1px solid #ddd;
   table-layout: auto;
 }
