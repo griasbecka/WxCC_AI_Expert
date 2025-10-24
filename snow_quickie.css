@@ -212,6 +212,7 @@ label {
   z-index: 3;
   /* optional: leichter Shadow, damit man die Trennung sieht */
   box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  padding-left: 12px;
 }
 
 .ticket-table th.sortable { cursor: pointer; user-select: none; position: relative; }
