@@ -175,6 +175,7 @@ a {
 	text-decoration: none;
 	transition: color 0.1s ease-in-out, font-weight 0.05s linear;
 	padding-left: 12px;
+	padding-right: 12px;
 }
 a:hover {
 	color: #1a4d6b;
@@ -224,6 +225,7 @@ a:hover {
 .ticket-table td {
   padding: 6px;
   padding-left: 12px;
+  padding-right: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 14px;
